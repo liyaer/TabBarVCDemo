@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D2DE96D01F90665900E0E050 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE96CF1F90665900E0E050 /* main.m */; };
+		D2DE96D31F90665900E0E050 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE96D21F90665900E0E050 /* AppDelegate.m */; };
+		D2DE96D61F90665900E0E050 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE96D51F90665900E0E050 /* ViewController.m */; };
+		D2DE96D91F90665900E0E050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DE96D71F90665900E0E050 /* Main.storyboard */; };
+		D2DE96DB1F90665900E0E050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2DE96DA1F90665900E0E050 /* Assets.xcassets */; };
+		D2DE96DE1F90665900E0E050 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DE96DC1F90665900E0E050 /* LaunchScreen.storyboard */; };
+		D2DE96E91F90665900E0E050 /* PayReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE96E81F90665900E0E050 /* PayReaderTests.m */; };
+		D2DE96F41F90665900E0E050 /* PayReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE96F31F90665900E0E050 /* PayReaderUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D2DE96E51F90665900E0E050 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2DE96C31F90665900E0E050 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2DE96CA1F90665900E0E050;
+			remoteInfo = PayReader;
+		};
+		D2DE96F01F90665900E0E050 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D2DE96C31F90665900E0E050 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D2DE96CA1F90665900E0E050;
+			remoteInfo = PayReader;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D2DE96CB1F90665900E0E050 /* PayReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2DE96CF1F90665900E0E050 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D2DE96D11F90665900E0E050 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		D2DE96D21F90665900E0E050 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		D2DE96D41F90665900E0E050 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		D2DE96D51F90665900E0E050 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		D2DE96D81F90665900E0E050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		D2DE96DA1F90665900E0E050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D2DE96DD1F90665900E0E050 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D2DE96DF1F90665900E0E050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2DE96E41F90665900E0E050 /* PayReaderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayReaderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2DE96E81F90665900E0E050 /* PayReaderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayReaderTests.m; sourceTree = "<group>"; };
+		D2DE96EA1F90665900E0E050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D2DE96EF1F90665900E0E050 /* PayReaderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PayReaderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2DE96F31F90665900E0E050 /* PayReaderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PayReaderUITests.m; sourceTree = "<group>"; };
+		D2DE96F51F90665900E0E050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D2DE96C81F90665900E0E050 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2DE96E11F90665900E0E050 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2DE96EC1F90665900E0E050 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D2DE96C21F90665900E0E050 = {
+			isa = PBXGroup;
+			children = (
+				D2DE96CD1F90665900E0E050 /* PayReader */,
+				D2DE96E71F90665900E0E050 /* PayReaderTests */,
+				D2DE96F21F90665900E0E050 /* PayReaderUITests */,
+				D2DE96CC1F90665900E0E050 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D2DE96CC1F90665900E0E050 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D2DE96CB1F90665900E0E050 /* PayReader.app */,
+				D2DE96E41F90665900E0E050 /* PayReaderTests.xctest */,
+				D2DE96EF1F90665900E0E050 /* PayReaderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D2DE96CD1F90665900E0E050 /* PayReader */ = {
+			isa = PBXGroup;
+			children = (
+				D2DE96D11F90665900E0E050 /* AppDelegate.h */,
+				D2DE96D21F90665900E0E050 /* AppDelegate.m */,
+				D2DE96D41F90665900E0E050 /* ViewController.h */,
+				D2DE96D51F90665900E0E050 /* ViewController.m */,
+				D2DE96D71F90665900E0E050 /* Main.storyboard */,
+				D2DE96DA1F90665900E0E050 /* Assets.xcassets */,
+				D2DE96DC1F90665900E0E050 /* LaunchScreen.storyboard */,
+				D2DE96DF1F90665900E0E050 /* Info.plist */,
+				D2DE96CE1F90665900E0E050 /* Supporting Files */,
+			);
+			path = PayReader;
+			sourceTree = "<group>";
+		};
+		D2DE96CE1F90665900E0E050 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2DE96CF1F90665900E0E050 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D2DE96E71F90665900E0E050 /* PayReaderTests */ = {
+			isa = PBXGroup;
+			children = (
+				D2DE96E81F90665900E0E050 /* PayReaderTests.m */,
+				D2DE96EA1F90665900E0E050 /* Info.plist */,
+			);
+			path = PayReaderTests;
+			sourceTree = "<group>";
+		};
+		D2DE96F21F90665900E0E050 /* PayReaderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D2DE96F31F90665900E0E050 /* PayReaderUITests.m */,
+				D2DE96F51F90665900E0E050 /* Info.plist */,
+			);
+			path = PayReaderUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D2DE96CA1F90665900E0E050 /* PayReader */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2DE96F81F90665900E0E050 /* Build configuration list for PBXNativeTarget "PayReader" */;
+			buildPhases = (
+				D2DE96C71F90665900E0E050 /* Sources */,
+				D2DE96C81F90665900E0E050 /* Frameworks */,
+				D2DE96C91F90665900E0E050 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PayReader;
+			productName = PayReader;
+			productReference = D2DE96CB1F90665900E0E050 /* PayReader.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D2DE96E31F90665900E0E050 /* PayReaderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2DE96FB1F90665900E0E050 /* Build configuration list for PBXNativeTarget "PayReaderTests" */;
+			buildPhases = (
+				D2DE96E01F90665900E0E050 /* Sources */,
+				D2DE96E11F90665900E0E050 /* Frameworks */,
+				D2DE96E21F90665900E0E050 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2DE96E61F90665900E0E050 /* PBXTargetDependency */,
+			);
+			name = PayReaderTests;
+			productName = PayReaderTests;
+			productReference = D2DE96E41F90665900E0E050 /* PayReaderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D2DE96EE1F90665900E0E050 /* PayReaderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D2DE96FE1F90665900E0E050 /* Build configuration list for PBXNativeTarget "PayReaderUITests" */;
+			buildPhases = (
+				D2DE96EB1F90665900E0E050 /* Sources */,
+				D2DE96EC1F90665900E0E050 /* Frameworks */,
+				D2DE96ED1F90665900E0E050 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D2DE96F11F90665900E0E050 /* PBXTargetDependency */,
+			);
+			name = PayReaderUITests;
+			productName = PayReaderUITests;
+			productReference = D2DE96EF1F90665900E0E050 /* PayReaderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D2DE96C31F90665900E0E050 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "杜文亮";
+				TargetAttributes = {
+					D2DE96CA1F90665900E0E050 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
+					D2DE96E31F90665900E0E050 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D2DE96CA1F90665900E0E050;
+					};
+					D2DE96EE1F90665900E0E050 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D2DE96CA1F90665900E0E050;
+					};
+				};
+			};
+			buildConfigurationList = D2DE96C61F90665900E0E050 /* Build configuration list for PBXProject "PayReader" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D2DE96C21F90665900E0E050;
+			productRefGroup = D2DE96CC1F90665900E0E050 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D2DE96CA1F90665900E0E050 /* PayReader */,
+				D2DE96E31F90665900E0E050 /* PayReaderTests */,
+				D2DE96EE1F90665900E0E050 /* PayReaderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D2DE96C91F90665900E0E050 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2DE96DE1F90665900E0E050 /* LaunchScreen.storyboard in Resources */,
+				D2DE96DB1F90665900E0E050 /* Assets.xcassets in Resources */,
+				D2DE96D91F90665900E0E050 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2DE96E21F90665900E0E050 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2DE96ED1F90665900E0E050 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D2DE96C71F90665900E0E050 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2DE96D61F90665900E0E050 /* ViewController.m in Sources */,
+				D2DE96D31F90665900E0E050 /* AppDelegate.m in Sources */,
+				D2DE96D01F90665900E0E050 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2DE96E01F90665900E0E050 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2DE96E91F90665900E0E050 /* PayReaderTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D2DE96EB1F90665900E0E050 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2DE96F41F90665900E0E050 /* PayReaderUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D2DE96E61F90665900E0E050 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2DE96CA1F90665900E0E050 /* PayReader */;
+			targetProxy = D2DE96E51F90665900E0E050 /* PBXContainerItemProxy */;
+		};
+		D2DE96F11F90665900E0E050 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D2DE96CA1F90665900E0E050 /* PayReader */;
+			targetProxy = D2DE96F01F90665900E0E050 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D2DE96D71F90665900E0E050 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2DE96D81F90665900E0E050 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D2DE96DC1F90665900E0E050 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2DE96DD1F90665900E0E050 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D2DE96F61F90665900E0E050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D2DE96F71F90665900E0E050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D2DE96F91F90665900E0E050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PayReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.du.PayReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D2DE96FA1F90665900E0E050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = PayReader/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.du.PayReader;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D2DE96FC1F90665900E0E050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PayReaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.du.PayReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PayReader.app/PayReader";
+			};
+			name = Debug;
+		};
+		D2DE96FD1F90665900E0E050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PayReaderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.du.PayReaderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PayReader.app/PayReader";
+			};
+			name = Release;
+		};
+		D2DE96FF1F90665900E0E050 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PayReaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.du.PayReaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PayReader;
+			};
+			name = Debug;
+		};
+		D2DE97001F90665900E0E050 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PayReaderUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.du.PayReaderUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = PayReader;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D2DE96C61F90665900E0E050 /* Build configuration list for PBXProject "PayReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2DE96F61F90665900E0E050 /* Debug */,
+				D2DE96F71F90665900E0E050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D2DE96F81F90665900E0E050 /* Build configuration list for PBXNativeTarget "PayReader" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2DE96F91F90665900E0E050 /* Debug */,
+				D2DE96FA1F90665900E0E050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D2DE96FB1F90665900E0E050 /* Build configuration list for PBXNativeTarget "PayReaderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2DE96FC1F90665900E0E050 /* Debug */,
+				D2DE96FD1F90665900E0E050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D2DE96FE1F90665900E0E050 /* Build configuration list for PBXNativeTarget "PayReaderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D2DE96FF1F90665900E0E050 /* Debug */,
+				D2DE97001F90665900E0E050 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D2DE96C31F90665900E0E050 /* Project object */;
+}
