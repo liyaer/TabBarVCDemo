@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ClassifyVC.h
 //  PayReader
 //
 //  Created by 杜文亮 on 2017/10/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface ClassifyVC : UIViewController
 
 @end
-
