@@ -75,7 +75,6 @@
     SubmitTabBarVC *tabBar = [[SubmitTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"分类",@"我的"] images:@[@"1",@"2",@"3",@"4"] selectedImages:@[@"11",@"22",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:nil];
 #endif
     self.window.rootViewController = tabBar;
-    [self.window makeKeyWindow];
 }
 
 
