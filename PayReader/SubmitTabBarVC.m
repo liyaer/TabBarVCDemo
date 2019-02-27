@@ -35,8 +35,10 @@
             [self addChildViewController:nav];
         }
         self.tabBar.tintColor = selectedColor;//设置选中Item的title颜色
-        self.tabBar.unselectedItemTintColor = unSelectedColor;//设置未选中Item的title颜色
-        
+        if (@available(iOS 10.0, *))
+        {
+            self.tabBar.unselectedItemTintColor = unSelectedColor;//设置未选中Item的title颜色
+        }
         self.delegate = self;
     }
     return self;
