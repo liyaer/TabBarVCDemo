@@ -58,7 +58,7 @@
 
 #pragma mark - UITabBarDelegate
 
-//点击tabBarItem时调用(两种实现方式：1，KVC  2，遍历子视图)
+//点击tabBarItem时调用(两种实现方式：1，遍历子视图  2，KVC  使用私有API可能会被拒绝，也可能导致崩溃，这两种方式严格意义上都算是使用私有API，但是2更明显一些)
 #if 0
 -(void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
 {
@@ -69,11 +69,10 @@
     NSInteger index = [self.tabBar.items indexOfObject:item];
     if (index != self.indexFlag)
     {
-        //私有属性，遍历获得继承自UIView的UITabBarButton（使用私有API可能会被拒绝）
+        //遍历获得继承自UIView的UITabBarButton（继承自UIView的控件才能构造动画效果）
         NSMutableArray *array = [NSMutableArray array];
         for (UIView *btn in self.tabBar.subviews)
         {
-            //继承自UIView的控件才能构造动画效果
             if ([btn isKindOfClass:NSClassFromString(@"UITabBarButton")])
             {
 //                NSLog(@"%@",btn.subviews);
