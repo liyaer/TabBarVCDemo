@@ -1,0 +1,78 @@
+//
+//  PrefixHeader.pch
+//  PayReader
+//
+//  Created by DuBenben on 2020/6/29.
+//  Copyright © 2020 杜文亮. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+
+
+
+//=============================app info===============================
+#define App_ID  @""
+#define App_Version [[NSBundle mainBundle] infoDictionary][@"CFBundleShortVersionString"]
+
+//=============================宏定义===============================
+//Debug 开启日志输出    Release 关闭日志输出   2如果出现打印不全，采用方式1
+//1
+//#ifdef DEBUG
+//#define DLog(format, ...) printf("class: <%p %s:(%d)> \nmethod: %s \n======打印数据======%s\n", self, [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __PRETTY_FUNCTION__, [[NSString stringWithFormat:(format), ##__VA_ARGS__] UTF8String] )
+//#else
+//#define DLog(format, ...)
+//#endif
+//2
+#ifdef DEBUG
+# define DLog(fmt, ...) NSLog((@"[Line: %d]\n" "[Function: %s] \n=======打印数据======" fmt), __LINE__, __FUNCTION__, ##__VA_ARGS__);
+#else
+# define DLog(...);
+#endif
+
+//系统版本判断
+#define iOS_Version [[UIDevice currentDevice].systemVersion doubleValue]
+
+//keyWindow
+#define DWindow [UIApplication sharedApplication].keyWindow
+//全屏的高、宽
+#define DScreenHeight ([UIScreen mainScreen].bounds.size.height)
+#define DScreenWidth  ([UIScreen mainScreen].bounds.size.width)
+//粪叉适配
+#define IsiPhoneX             ((DScreenHeight >= 812) ? YES : NO)
+#define StatusBarHeight       (IsiPhoneX ? 44 : 20)
+#define NavHeight             (StatusBarHeight + 44)
+#define BottomSafeAreaHeight  (IsiPhoneX ? 34 : 0)
+#define TabBarHeight          (BottomSafeAreaHeight + 49)
+#define HasNavAndTabBarRect   CGRectMake(0, NavHeight, DScreenWidth, DScreenHeight -NavHeight -TabBarHeight)
+#define HasNavRect            CGRectMake(0, NavHeight, DScreenWidth, DScreenHeight -NavHeight -BottomSafeAreaHeight)
+
+//document路径
+#define DocumentPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
+
+//RGB 颜色、随机色
+#define DColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+#define DRandomColor  [UIColor colorWithRed:arc4random_uniform(255)/255.0 green:arc4random_uniform(255)/255.0 blue:arc4random_uniform(255)/255.0 alpha:1.0f];
+//主题颜色
+#define ThemeColor DColor(102, 192, 235)
+
+
+#define NoNetTip [Dwl_TipView showHUD:@"你的网络飞走了~" showTime:2.0]
+#define NotGoodNetTip [Dwl_TipView showHUD:@"网速有点慢哦~" showTime:2.0]
+#define NotLoginTip [Dwl_TipView showHUD:@"请先完成登录~" showTime:2.0]
+
+//=============================头文件===============================
+
+#import "Dwl_Common.h"
+#import "Dwl_NetWork.h"
+#import "UIButton+Block.h"
+
+
+
+
+#endif /* PrefixHeader_pch */
