@@ -77,16 +77,23 @@
 }
 
 - (void)modifyBarTitleSelectedColor:(UIColor *)selectedColor unSelectedColor:(UIColor *)unSelectedColor {
-    if (@available(iOS 10.0, *)) {
-        //写法二选一
-        self.tabBar.tintColor = selectedColor;
-        self.tabBar.unselectedItemTintColor = unSelectedColor;
-//        [[UITabBar appearance] setTintColor:selectedColor];
-//        [[UITabBar appearance] setUnselectedItemTintColor:unSelectedColor];
-    } else {
-        UITabBarItem *tabBarItem = [UITabBarItem appearance];
-        [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : selectedColor} forState:UIControlStateSelected];
-        [tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName : unSelectedColor} forState:UIControlStateNormal];
+    if (selectedColor) {
+        if (@available(iOS 10.0, *)) {
+            //写法二选一
+            self.tabBar.tintColor = selectedColor;
+//            [[UITabBar appearance] setTintColor:selectedColor];
+        } else {
+            [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : selectedColor} forState:UIControlStateSelected];
+        }
+    }
+    
+    if (unSelectedColor) {
+        if (@available(iOS 10.0, *)) {
+            self.tabBar.unselectedItemTintColor = unSelectedColor;
+//            [[UITabBar appearance] setUnselectedItemTintColor:unSelectedColor];
+        } else {
+            [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : unSelectedColor} forState:UIControlStateNormal];
+        }
     }
 }
 
@@ -102,7 +109,7 @@
     if ([viewController isKindOfClass:[UINavigationController class]]) {
         return YES;
     }
-    [self centerBtnClicked];
+//    [self centerBtnClicked];
     return NO;
 }
 
@@ -112,11 +119,24 @@
     if (!_centerBtn) {
         _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _centerBtn.frame = CGRectMake(0, 0, TabBarHeight, TabBarHeight);
-        _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, TabBarHeight/2);
+        //中间正常
+//        _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, TabBarHeight/2);
+        //中间凸起
+        _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, 0);
         [_centerBtn setImage:[UIImage imageNamed:@"5"] forState:UIControlStateNormal];
-        [_centerBtn addTarget:self action:@selector(centerBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+//        [_centerBtn addTarget:self action:@selector(centerBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     }
     return _centerBtn;
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    if (!self.tabBar.hidden) {
+        CGPoint touch = [[touches anyObject] locationInView:_centerBtn];
+        NSLog(@"%@ \n%@", NSStringFromCGPoint(touch), NSStringFromCGRect(_centerBtn.frame));
+        if (CGRectContainsPoint(_centerBtn.frame, touch)) {
+            [self centerBtnClicked];
+        }
+    }
 }
 
 @end
