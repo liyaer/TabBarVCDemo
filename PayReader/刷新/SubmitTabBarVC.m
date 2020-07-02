@@ -23,6 +23,7 @@
 {
     if (self = [super init])
     {
+        NSMutableArray *vcs = [NSMutableArray array];
         for (int i = 0; i < names.count; i++)
         {
 #warning 添加子控制器时并不会提前走4个VC的ViewDidLoad方法，只会走一个默认选中的VC的ViewDidLoad，这也是符合我们的预期和需求的。如果发现会走4个VC的ViewDidLoad方法，那么一定是用了自定义的导航栏导致了该问题
@@ -32,8 +33,10 @@
             vc.tabBarItem.image = [[UIImage imageNamed:images[i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImages[i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
             UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-            [self addChildViewController:nav];
+//            [self addChildViewController:nav]; 直接设置self.viewControllers也可以到达相同效果
+            [vcs addObject:nav];
         }
+        self.viewControllers = vcs;
         self.tabBar.tintColor = selectedColor;//设置选中Item的title颜色
         if (@available(iOS 10.0, *))
         {

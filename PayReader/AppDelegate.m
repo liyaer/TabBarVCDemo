@@ -9,6 +9,10 @@
 #import "AppDelegate.h"
 #import "FZTabBarVC.h"
 #import "SubmitTabBarVC.h"
+#import "WLTabBarController.h"
+
+
+#define TabBarType 2
 
 
 @interface AppDelegate ()
@@ -66,13 +70,15 @@
 -(void)setRootVC
 {
 //点击动画和双击刷新建议分开单独使用；若要一起使用，需要考虑某些动画效果和双击刷新的兼容性
-#if 0
+#if (TabBarType == 0)
     FZTabBarVC *tabBar = [[FZTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"分类",@"我的"] images:@[@"1",@"2",@"3",@"4"] selectedImages:@[@"11",@"22",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:nil];
     tabBar.animationType = ImageAnimation;
 //    tabBar.animationType = ImageTitleAnimation;
 //    tabBar.selectedIndex = 2;
-#else
+#elif (TabBarType == 1)
     SubmitTabBarVC *tabBar = [[SubmitTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"分类",@"我的"] images:@[@"1",@"2",@"3",@"4"] selectedImages:@[@"11",@"22",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:nil];
+#elif (TabBarType == 2)
+    WLTabBarController *tabBar = [[WLTabBarController alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"",@"分类",@"我的"] images:@[@"1",@"2",@"",@"3",@"4"] selectedImages:@[@"11",@"22",@"",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor]];
 #endif
     self.window.rootViewController = tabBar;
 }

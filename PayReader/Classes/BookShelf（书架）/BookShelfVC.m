@@ -23,9 +23,16 @@
     
     UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 100, 60)];
     [btn setTitle:@"同一个btn的单双击时间" forState:UIControlStateNormal];
+    [btn addTarget:self action:@selector(pushVC) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
 }
 
+- (void)pushVC {
+    UIViewController *vc = [UIViewController new];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.view.backgroundColor = [UIColor purpleColor];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 @end
