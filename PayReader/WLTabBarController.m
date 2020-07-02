@@ -10,7 +10,9 @@
 #import "Header.h"
 
 
-@interface WLTabBarController ()<UITabBarControllerDelegate>
+@interface WLTabBarController ()<UITabBarControllerDelegate> {
+    WLCenterStyle _centerStyle;
+}
 
 @property (nonatomic, strong) UIButton *centerBtn;
 
@@ -38,9 +40,11 @@
 
 #pragma mark - 正题
 
-- (instancetype)initWithVCNames:(NSArray<NSString *> *)names titles:(NSArray<NSString *> *)titles images:(NSArray<NSString *> *)images selectedImages:(NSArray<NSString *> *)selectedImages selectedTitleColor:(UIColor *)selectedColor unSelectedTitleColor:(UIColor *)unSelectedColor {
+- (instancetype)initWithVCNames:(NSArray<NSString *> *)names titles:(NSArray<NSString *> *)titles images:(NSArray<NSString *> *)images selectedImages:(NSArray<NSString *> *)selectedImages selectedTitleColor:(UIColor *)selectedColor unSelectedTitleColor:(UIColor *)unSelectedColor centerStyle:(WLCenterStyle)centerStyle {
     if (self = [super init]) {
         NSLog(@"custom init");
+        
+        _centerStyle = centerStyle;
         
         BOOL countEqual = (names.count == titles.count) && (titles.count == images.count) && (images.count == selectedImages.count);
         BOOL countNoZero = names.count > 0;
@@ -109,7 +113,7 @@
     if ([viewController isKindOfClass:[UINavigationController class]]) {
         return YES;
     }
-//    [self centerBtnClicked];
+    [self centerBtnClicked];
     return NO;
 }
 
@@ -119,22 +123,30 @@
     if (!_centerBtn) {
         _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _centerBtn.frame = CGRectMake(0, 0, TabBarHeight, TabBarHeight);
-        //中间正常
-//        _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, TabBarHeight/2);
-        //中间凸起
-        _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, 0);
+        if (_centerStyle == WLCenterStyleNormal) {
+            _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, TabBarHeight/2);
+        } else {
+            _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, 0);
+        }
         [_centerBtn setImage:[UIImage imageNamed:@"5"] forState:UIControlStateNormal];
 //        [_centerBtn addTarget:self action:@selector(centerBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     }
     return _centerBtn;
 }
 
+//解决中间特殊按钮凸起部分不能响应点击事件
+//该次点击没有其他事件响应时，才会调用下面的方法（比如点击tabBarItem，会拦截响应该方法）
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    if (!self.tabBar.hidden) {
-        CGPoint touch = [[touches anyObject] locationInView:_centerBtn];
-        NSLog(@"%@ \n%@", NSStringFromCGPoint(touch), NSStringFromCGRect(_centerBtn.frame));
-        if (CGRectContainsPoint(_centerBtn.frame, touch)) {
-            [self centerBtnClicked];
+    [super touchesBegan:touches withEvent:event];
+    
+    if (_centerStyle == WLCenterStyleHump) {
+        //只有当前正在显示tabBarController时，开启中间特殊按钮的交互
+        if (!self.tabBar.hidden) {
+            //判断点击是否在特殊按钮的范围内
+            CGPoint touch = [[touches anyObject] locationInView:_centerBtn];
+            if (CGRectContainsPoint(_centerBtn.bounds, touch)) {
+                [self centerBtnClicked];
+            }
         }
     }
 }
