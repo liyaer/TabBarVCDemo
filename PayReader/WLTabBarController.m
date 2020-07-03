@@ -13,7 +13,6 @@
 @interface WLTabBarController ()<UITabBarControllerDelegate> {
     WLCenterStyle _centerStyle;
 }
-
 @property (nonatomic, strong) UIButton *centerBtn;
 
 @end
@@ -43,14 +42,15 @@
 - (instancetype)initWithVCNames:(NSArray<NSString *> *)names titles:(NSArray<NSString *> *)titles images:(NSArray<NSString *> *)images selectedImages:(NSArray<NSString *> *)selectedImages selectedTitleColor:(UIColor *)selectedColor unSelectedTitleColor:(UIColor *)unSelectedColor centerStyle:(WLCenterStyle)centerStyle {
     if (self = [super init]) {
         NSLog(@"custom init");
-        
-        _centerStyle = centerStyle;
-        
+                
         BOOL countEqual = (names.count == titles.count) && (titles.count == images.count) && (images.count == selectedImages.count);
         BOOL countNoZero = names.count > 0;
+        
         if (countEqual && countNoZero) {
+            _centerStyle = centerStyle;
+            
             for (int i = 0; i < names.count; i++) {
-                if (i == 2) {
+                if (i == names.count/2) {
                     UIViewController *middleVC = [UIViewController new];
                     [self addChildViewController:middleVC];
                     continue;
@@ -101,14 +101,9 @@
     }
 }
 
-#pragma mark - 点击事件
-
-- (void)centerBtnClicked {
-    NSLog(@"这种方式牺牲了一个控制器的内存占用，若项目使用web view较多，可以考虑在这里放个web view进行预热");
-}
-
 #pragma mark - UITabBarControllerDelegate
 
+//拦截中间tabBarItem点击事件的响应，使其响应我们自定义的方法
 - (BOOL)tabBarController:(UITabBarController *)tabBarController shouldSelectViewController:(nonnull UIViewController *)viewController {
     if ([viewController isKindOfClass:[UINavigationController class]]) {
         return YES;
@@ -117,21 +112,11 @@
     return NO;
 }
 
-#pragma mark - 懒加载
+#pragma mark - 点击事件
 
-- (UIButton *)centerBtn {
-    if (!_centerBtn) {
-        _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _centerBtn.frame = CGRectMake(0, 0, TabBarHeight, TabBarHeight);
-        if (_centerStyle == WLCenterStyleNormal) {
-            _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, TabBarHeight/2);
-        } else {
-            _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, 0);
-        }
-        [_centerBtn setImage:[UIImage imageNamed:@"5"] forState:UIControlStateNormal];
-//        [_centerBtn addTarget:self action:@selector(centerBtnClicked) forControlEvents:UIControlEventTouchUpInside];
-    }
-    return _centerBtn;
+//中间特殊按钮的点击事件
+- (void)centerBtnClicked {
+    NSLog(@"这种方式牺牲了一个控制器的内存占用，若项目使用web view较多，可以考虑在这里放个web view进行预热");
 }
 
 //解决中间特殊按钮凸起部分不能响应点击事件
@@ -149,6 +134,24 @@
             }
         }
     }
+}
+
+#pragma mark - 懒加载
+
+- (UIButton *)centerBtn {
+    if (!_centerBtn) {
+        _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _centerBtn.frame = CGRectMake(0, 0, TabBarHeight, TabBarHeight);
+        if (_centerStyle == WLCenterStyleHump) {
+            _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, 0);
+        } else {
+            _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, TabBarHeight/2);
+        }
+        [_centerBtn setImage:[UIImage imageNamed:@"5"] forState:UIControlStateNormal];
+        //中间tabBarItem的点击事件会拦截btn的点击事件，因此这里设置无效
+//        [_centerBtn addTarget:self action:@selector(centerBtnClicked) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _centerBtn;
 }
 
 @end

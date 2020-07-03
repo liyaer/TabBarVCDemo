@@ -142,6 +142,13 @@
 			path = "刷新";
 			sourceTree = "<group>";
 		};
+		3C1C168924AF6B51007A4DFC /* 写成类簇 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "写成类簇";
+			sourceTree = "<group>";
+		};
 		D2DE96C21F90665900E0E050 = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +178,7 @@
 				D2DE96D21F90665900E0E050 /* AppDelegate.m */,
 				047D309624AAC9D4003D8C69 /* 动画 */,
 				047D309724AAC9EA003D8C69 /* 刷新 */,
+				3C1C168924AF6B51007A4DFC /* 写成类簇 */,
 				048D613F24A98C6B0034D4F0 /* WLTabBarController.h */,
 				048D614024A98C6B0034D4F0 /* WLTabBarController.m */,
 				048D614224A98CC60034D4F0 /* WLTabBar.h */,
