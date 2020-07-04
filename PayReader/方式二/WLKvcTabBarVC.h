@@ -1,23 +1,16 @@
 //
-//  WLTabBarController.h
+//  WLKvcTabBarVC.h
 //  PayReader
 //
-//  Created by DuBenben on 2020/6/29.
+//  Created by DuBenBen on 2020/7/4.
 //  Copyright © 2020 杜文亮. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "WLBaseTabBarController.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-
-typedef NS_ENUM(NSInteger, WLCenterStyle) {
-    WLCenterStyleNormal = 1,
-    WLCenterStyleHump
-};
-
-
-@interface WLTabBarController : UITabBarController
+@interface WLKvcTabBarVC : WLBaseTabBarController
 
 - (instancetype)initWithVCNames:(NSArray<NSString *> *)names titles:(NSArray<NSString *> *)titles images:(NSArray<NSString *> *)images selectedImages:(NSArray<NSString *> *)selectedImages selectedTitleColor:(UIColor *)selectedColor unSelectedTitleColor:(UIColor *)unSelectedColor centerStyle:(WLCenterStyle)centerStyle;
 

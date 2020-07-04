@@ -9,7 +9,8 @@
 #import "AppDelegate.h"
 #import "FZTabBarVC.h"
 #import "SubmitTabBarVC.h"
-#import "WLTabBarController.h"
+#import "WLMemoryTabBarVC.h"
+#import "WLKvcTabBarVC.h"
 
 
 #define TabBarType 2
@@ -21,7 +22,6 @@
 
 
 @implementation AppDelegate
-
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -78,7 +78,9 @@
 #elif (TabBarType == 1)
     SubmitTabBarVC *tabBar = [[SubmitTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"分类",@"我的"] images:@[@"1",@"2",@"3",@"4"] selectedImages:@[@"11",@"22",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:nil];
 #elif (TabBarType == 2)
-    WLTabBarController *tabBar = [[WLTabBarController alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"",@"分类",@"我的"] images:@[@"1",@"2",@"",@"3",@"4"] selectedImages:@[@"11",@"22",@"",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleHump];
+    WLMemoryTabBarVC *tabBar = [[WLMemoryTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"",@"分类",@"我的"] images:@[@"1",@"2",@"",@"3",@"4"] selectedImages:@[@"11",@"22",@"",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleNormal];
+#elif (TabBarType == 3)
+    WLKvcTabBarVC *tabBar = [[WLKvcTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"分类",@"我的"] images:@[@"1",@"2",@"3",@"4"] selectedImages:@[@"11",@"22",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleNormal];
 #endif
     self.window.rootViewController = tabBar;
 }

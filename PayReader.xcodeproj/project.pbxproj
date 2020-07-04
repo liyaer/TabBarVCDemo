@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		048D614124A98C6B0034D4F0 /* WLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 048D614024A98C6B0034D4F0 /* WLTabBarController.m */; };
 		048D614424A98CC60034D4F0 /* WLTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 048D614324A98CC60034D4F0 /* WLTabBar.m */; };
+		3C18AA9B24B02420005F86AA /* WLBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AA9A24B02420005F86AA /* WLBaseTabBarController.m */; };
+		3C18AA9E24B02554005F86AA /* WLMemoryTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AA9D24B02554005F86AA /* WLMemoryTabBarVC.m */; };
+		3C18AAA124B026F8005F86AA /* WLKvcTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AAA024B026F8005F86AA /* WLKvcTabBarVC.m */; };
+		3C18AAA424B0285B005F86AA /* WLBaseTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AAA324B0285B005F86AA /* WLBaseTabBar.m */; };
+		3C18AAA724B028D1005F86AA /* WLKvcTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AAA624B028D1005F86AA /* WLKvcTabBar.m */; };
 		D2755BAF204E922300F8DD71 /* SubmitTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2755BAE204E922300F8DD71 /* SubmitTabBarVC.m */; };
 		D2755BB1204E9C4000F8DD71 /* Log1.png in Resources */ = {isa = PBXBuildFile; fileRef = D2755BB0204E9C3F00F8DD71 /* Log1.png */; };
 		D2755BB3204F7D5900F8DD71 /* 5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2755BB2204F7D5900F8DD71 /* 5@2x.png */; };
@@ -53,12 +57,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		048D613F24A98C6B0034D4F0 /* WLTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLTabBarController.h; sourceTree = "<group>"; };
-		048D614024A98C6B0034D4F0 /* WLTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLTabBarController.m; sourceTree = "<group>"; };
 		048D614224A98CC60034D4F0 /* WLTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLTabBar.h; sourceTree = "<group>"; };
 		048D614324A98CC60034D4F0 /* WLTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLTabBar.m; sourceTree = "<group>"; };
 		048D614824A999980034D4F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		048D614924A99B150034D4F0 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		3C18AA9924B02420005F86AA /* WLBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLBaseTabBarController.h; sourceTree = "<group>"; };
+		3C18AA9A24B02420005F86AA /* WLBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLBaseTabBarController.m; sourceTree = "<group>"; };
+		3C18AA9C24B02554005F86AA /* WLMemoryTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMemoryTabBarVC.h; sourceTree = "<group>"; };
+		3C18AA9D24B02554005F86AA /* WLMemoryTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMemoryTabBarVC.m; sourceTree = "<group>"; };
+		3C18AA9F24B026F8005F86AA /* WLKvcTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLKvcTabBarVC.h; sourceTree = "<group>"; };
+		3C18AAA024B026F8005F86AA /* WLKvcTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLKvcTabBarVC.m; sourceTree = "<group>"; };
+		3C18AAA224B0285B005F86AA /* WLBaseTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLBaseTabBar.h; sourceTree = "<group>"; };
+		3C18AAA324B0285B005F86AA /* WLBaseTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLBaseTabBar.m; sourceTree = "<group>"; };
+		3C18AAA524B028D1005F86AA /* WLKvcTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLKvcTabBar.h; sourceTree = "<group>"; };
+		3C18AAA624B028D1005F86AA /* WLKvcTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLKvcTabBar.m; sourceTree = "<group>"; };
 		D2755BAD204E922300F8DD71 /* SubmitTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubmitTabBarVC.h; sourceTree = "<group>"; };
 		D2755BAE204E922300F8DD71 /* SubmitTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubmitTabBarVC.m; sourceTree = "<group>"; };
 		D2755BB0204E9C3F00F8DD71 /* Log1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Log1.png; sourceTree = "<group>"; };
@@ -142,6 +154,35 @@
 			path = "刷新";
 			sourceTree = "<group>";
 		};
+		3C18AA9024B0124D005F86AA /* 方式一 */ = {
+			isa = PBXGroup;
+			children = (
+				3C18AA9C24B02554005F86AA /* WLMemoryTabBarVC.h */,
+				3C18AA9D24B02554005F86AA /* WLMemoryTabBarVC.m */,
+			);
+			path = "方式一";
+			sourceTree = "<group>";
+		};
+		3C18AA9124B012B6005F86AA /* 方式二 */ = {
+			isa = PBXGroup;
+			children = (
+				3C18AA9F24B026F8005F86AA /* WLKvcTabBarVC.h */,
+				3C18AAA024B026F8005F86AA /* WLKvcTabBarVC.m */,
+				3C18AAA524B028D1005F86AA /* WLKvcTabBar.h */,
+				3C18AAA624B028D1005F86AA /* WLKvcTabBar.m */,
+			);
+			path = "方式二";
+			sourceTree = "<group>";
+		};
+		3C18AA9224B012BF005F86AA /* 方式三 */ = {
+			isa = PBXGroup;
+			children = (
+				048D614224A98CC60034D4F0 /* WLTabBar.h */,
+				048D614324A98CC60034D4F0 /* WLTabBar.m */,
+			);
+			path = "方式三";
+			sourceTree = "<group>";
+		};
 		3C1C168924AF6B51007A4DFC /* 写成类簇 */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,11 +219,14 @@
 				D2DE96D21F90665900E0E050 /* AppDelegate.m */,
 				047D309624AAC9D4003D8C69 /* 动画 */,
 				047D309724AAC9EA003D8C69 /* 刷新 */,
+				3C18AA9924B02420005F86AA /* WLBaseTabBarController.h */,
+				3C18AA9A24B02420005F86AA /* WLBaseTabBarController.m */,
+				3C18AAA224B0285B005F86AA /* WLBaseTabBar.h */,
+				3C18AAA324B0285B005F86AA /* WLBaseTabBar.m */,
 				3C1C168924AF6B51007A4DFC /* 写成类簇 */,
-				048D613F24A98C6B0034D4F0 /* WLTabBarController.h */,
-				048D614024A98C6B0034D4F0 /* WLTabBarController.m */,
-				048D614224A98CC60034D4F0 /* WLTabBar.h */,
-				048D614324A98CC60034D4F0 /* WLTabBar.m */,
+				3C18AA9024B0124D005F86AA /* 方式一 */,
+				3C18AA9124B012B6005F86AA /* 方式二 */,
+				3C18AA9224B012BF005F86AA /* 方式三 */,
 				D2DE97261F908A5200E0E050 /* Classes */,
 				D2DE97371F908A5B00E0E050 /* ImagesResource */,
 				D2DE96CE1F90665900E0E050 /* Supporting Files */,
@@ -438,16 +482,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C18AA9B24B02420005F86AA /* WLBaseTabBarController.m in Sources */,
 				D2DE96D31F90665900E0E050 /* AppDelegate.m in Sources */,
 				D2DE97171F90737D00E0E050 /* FZTabBarVC.m in Sources */,
 				048D614424A98CC60034D4F0 /* WLTabBar.m in Sources */,
+				3C18AA9E24B02554005F86AA /* WLMemoryTabBarVC.m in Sources */,
+				3C18AAA724B028D1005F86AA /* WLKvcTabBar.m in Sources */,
 				D2DE97331F908A5200E0E050 /* BookShelfVC.m in Sources */,
+				3C18AAA424B0285B005F86AA /* WLBaseTabBar.m in Sources */,
 				D2DE97341F908A5200E0E050 /* ClassifyVC.m in Sources */,
 				D2755BAF204E922300F8DD71 /* SubmitTabBarVC.m in Sources */,
+				3C18AAA124B026F8005F86AA /* WLKvcTabBarVC.m in Sources */,
 				D2DE97351F908A5200E0E050 /* PersonalVC.m in Sources */,
 				D2DE97361F908A5200E0E050 /* RecommendVC.m in Sources */,
 				D2DE96D01F90665900E0E050 /* main.m in Sources */,
-				048D614124A98C6B0034D4F0 /* WLTabBarController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
