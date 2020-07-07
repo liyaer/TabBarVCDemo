@@ -14,7 +14,6 @@
 
 
 #define TabBarType 3
-//test when pull select "rebase ..."
 
 
 @interface AppDelegate ()
