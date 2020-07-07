@@ -13,7 +13,7 @@
 #import "WLKvcTabBarVC.h"
 
 
-#define TabBarType 2
+#define TabBarType 3
 
 
 @interface AppDelegate ()
@@ -80,7 +80,7 @@
 #elif (TabBarType == 2)
     WLMemoryTabBarVC *tabBar = [[WLMemoryTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"",@"分类",@"我的"] images:@[@"1",@"2",@"",@"3",@"4"] selectedImages:@[@"11",@"22",@"",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleNormal];
 #elif (TabBarType == 3)
-    WLKvcTabBarVC *tabBar = [[WLKvcTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"分类",@"我的"] images:@[@"1",@"2",@"3",@"4"] selectedImages:@[@"11",@"22",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleNormal];
+    WLKvcTabBarVC *tabBar = [[WLKvcTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC"] titles:@[@"书架",@"精选"] images:@[@"1",@"2"] selectedImages:@[@"11",@"22"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleNormal];
 #endif
     self.window.rootViewController = tabBar;
 }
