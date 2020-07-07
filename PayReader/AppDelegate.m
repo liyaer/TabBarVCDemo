@@ -14,7 +14,6 @@
 
 
 #define TabBarType 3
-//
 
 
 @interface AppDelegate ()
