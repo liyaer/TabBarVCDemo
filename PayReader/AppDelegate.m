@@ -12,7 +12,7 @@
 #import "WLMemoryTabBarVC.h"
 #import "WLKvcTabBarVC.h"
 
-//test when pull select "rebase ..."
+
 #define TabBarType 3
 
 
