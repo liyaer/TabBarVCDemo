@@ -6,11 +6,11 @@
 //  Copyright © 2020 杜文亮. All rights reserved.
 //
 
-#import "WLTabBar.h"
+#import "WLCustomTabBar.h"
 //#import "Header.h"
 
 
-@implementation WLTabBar
+@implementation WLCustomTabBar
 
 //+ (instancetype)creat {
 //    return [[self alloc] init];

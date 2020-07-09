@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface WLTabBar : UIView
+@interface WLCustomTabBar : UIView
 
 //+ (instancetype)creat;
 
