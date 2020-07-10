@@ -13,13 +13,14 @@
 @interface WLCustomTabBarVC () {
     WLCenterStyle _centerStyle;
 }
-
 @property (nonatomic, strong) WLCustomTabBar *customTabBar;
 
 @end
 
 
 @implementation WLCustomTabBarVC
+
+#pragma mark - 初始化
 
 - (instancetype)initWithVCNames:(NSArray<NSString *> *)names titles:(NSArray<NSString *> *)titles images:(NSArray<NSString *> *)images selectedImages:(NSArray<NSString *> *)selectedImages selectedTitleColor:(UIColor *)selectedColor unSelectedTitleColor:(UIColor *)unSelectedColor centerStyle:(WLCenterStyle)centerStyle {
     
@@ -33,10 +34,11 @@
             _centerStyle = centerStyle;
             
             for (int i = 0; i < names.count; i++) {
-                [self setupChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i]];
+                [self setupChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:nil selectedImage:nil];
             }
             
-            [self modifyBarTitleSelectedColor:selectedColor unSelectedColor:unSelectedColor];
+            
+            [self.tabBar addSubview:self.customTabBar];
         } else {
             NSLog(@"%@ 入参异常", [self class]);
         }
@@ -45,19 +47,32 @@
     return self;
 }
 
-- (void)viewDidLoad {
+- (void)viewWillLayoutSubviews {
     
-    [super viewDidLoad];
+    [super viewWillLayoutSubviews];
     
-    [self.tabBar addSubview:self.customTabBar];
+    // 移除原有的UITabBarButton
+    for (UIView *subView in self.tabBar.subviews) {
+        
+        // UITabBarButton私有API, 普通开发者不能使用
+        if ([subView isKindOfClass:[UIControl class]]) {
+            // 判断如果子控件是UITabBarButton, 就删除
+            [subView removeFromSuperview];
+        }
+    }
 }
 
+#pragma mark - 懒加载
+
 - (WLCustomTabBar *)customTabBar {
+    
     if (!_customTabBar) {
+        
         _customTabBar = [[WLCustomTabBar alloc] init];
         _customTabBar.frame = self.tabBar.bounds;
         _customTabBar.backgroundColor = [UIColor blueColor];
     }
+    
     return _customTabBar;
 }
 

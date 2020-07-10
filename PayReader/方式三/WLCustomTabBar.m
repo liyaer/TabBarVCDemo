@@ -12,21 +12,6 @@
 
 @implementation WLCustomTabBar
 
-//+ (instancetype)creat {
-//    return [[self alloc] init];
-//}
-//
-//- (instancetype)init {
-//    return [self initWithFrame:CGRectMake(0, 0, DScreenWidth, TabBarHeight)];
-//}
-//
-//- (instancetype)initWithFrame:(CGRect)frame {
-//    if (self = [super initWithFrame:frame]) {
-//        self.frame = CGRectMake(0, 0, DScreenWidth, TabBarHeight);
-//    }
-//    return self;
-//}
-
 - (instancetype)initWithFrame:(CGRect)frame
                 barItemTitles:(NSArray<NSString *> *)itemTitles
     barItemTitleSelectedColor:(UIColor *)itemTitleSelectedColor
@@ -39,5 +24,7 @@
     }
     return self;
 }
+
+
 
 @end
