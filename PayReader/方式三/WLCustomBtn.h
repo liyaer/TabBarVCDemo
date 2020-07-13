@@ -12,6 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WLCustomBtn : UIButton
 
++ (instancetype)customWithTitle:(NSString *)title
+                    titleColor:(UIColor *)color
+               titleSelectColor:(UIColor *)selectColor
+                          image:(NSString *)image
+                    selectImage:(NSString *)selectImage;
+
 @end
 
 NS_ASSUME_NONNULL_END

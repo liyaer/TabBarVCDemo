@@ -23,19 +23,24 @@
 
 - (void)setupChildVC:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage {
     
-    vc.title = title;
-    vc.tabBarItem.title = title;
+    if (vc) {
     
-    if (image) {
-        vc.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        if (title) {
+            vc.title = title;
+            vc.tabBarItem.title = title;
+        }
+        
+        if (image) {
+            vc.tabBarItem.image = [[UIImage imageNamed:image] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        }
+        
+        if (selectedImage) {
+            vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+        }
+        
+        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+        [self addChildViewController:nav];
     }
-    
-    if (selectedImage) {
-        vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-    }
-    
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-    [self addChildViewController:nav];
 }
 
 - (void)modifyBarTitleSelectedColor:(UIColor *)selectedColor unSelectedColor:(UIColor *)unSelectedColor {

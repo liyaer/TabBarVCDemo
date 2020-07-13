@@ -12,7 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WLCustomTabBarVC : WLBaseTabBarController
 
-- (instancetype)initWithVCNames:(NSArray<NSString *> *)names titles:(NSArray<NSString *> *)titles images:(NSArray<NSString *> *)images selectedImages:(NSArray<NSString *> *)selectedImages selectedTitleColor:(UIColor *)selectedColor unSelectedTitleColor:(UIColor *)unSelectedColor centerStyle:(WLCenterStyle)centerStyle;
+- (instancetype)initWithVCNames:(NSArray<NSString *> *)names
+                         titles:(NSArray<NSString *> *)titles
+                         images:(NSArray<NSString *> *)images
+                 selectedImages:(NSArray<NSString *> *)selectedImages
+             selectedTitleColor:(UIColor *)selectedColor
+           unSelectedTitleColor:(UIColor *)unSelectedColor
+                    centerStyle:(WLCenterStyle)centerStyle;
 
 @end
 

@@ -22,7 +22,13 @@
 
 #pragma mark - 初始化
 
-- (instancetype)initWithVCNames:(NSArray<NSString *> *)names titles:(NSArray<NSString *> *)titles images:(NSArray<NSString *> *)images selectedImages:(NSArray<NSString *> *)selectedImages selectedTitleColor:(UIColor *)selectedColor unSelectedTitleColor:(UIColor *)unSelectedColor centerStyle:(WLCenterStyle)centerStyle {
+- (instancetype)initWithVCNames:(NSArray<NSString *> *)names
+                         titles:(NSArray<NSString *> *)titles
+                         images:(NSArray<NSString *> *)images
+                 selectedImages:(NSArray<NSString *> *)selectedImages
+             selectedTitleColor:(UIColor *)selectedColor
+           unSelectedTitleColor:(UIColor *)unSelectedColor
+                    centerStyle:(WLCenterStyle)centerStyle {
     
     if (self = [super init]) {
         
@@ -37,8 +43,8 @@
                 [self setupChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:nil selectedImage:nil];
             }
             
-            
-            [self.tabBar addSubview:self.customTabBar];
+            WLCustomTabBar *customTabBar = [[WLCustomTabBar alloc] initWithFrame:self.tabBar.bounds barItemTitles:titles barItemTitleSelectedColor:selectedColor barItemTitleUnselectedColor:unSelectedColor barItemSelectedImageNames:images barItemUnselectedImageNames:selectedImages];
+            [self.tabBar addSubview:customTabBar];
         } else {
             NSLog(@"%@ 入参异常", [self class]);
         }
@@ -64,16 +70,16 @@
 
 #pragma mark - 懒加载
 
-- (WLCustomTabBar *)customTabBar {
-    
-    if (!_customTabBar) {
-        
-        _customTabBar = [[WLCustomTabBar alloc] init];
-        _customTabBar.frame = self.tabBar.bounds;
-        _customTabBar.backgroundColor = [UIColor blueColor];
-    }
-    
-    return _customTabBar;
-}
+//- (WLCustomTabBar *)customTabBar {
+//
+//    if (!_customTabBar) {
+//
+//        _customTabBar = [[WLCustomTabBar alloc] init];
+//        _customTabBar.frame = self.tabBar.bounds;
+//        _customTabBar.backgroundColor = [UIColor blueColor];
+//    }
+//
+//    return _customTabBar;
+//}
 
 @end
