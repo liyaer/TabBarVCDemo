@@ -93,7 +93,7 @@
             CGPoint newP = [self convertPoint:point toView:self.centerBtn];
 
             //判断如果这个新的点是在中间按钮身上，那么处理点击事件最合适的view就是中间按钮
-            if ( [self.centerBtn pointInside:newP withEvent:event]) {
+            if ([self.centerBtn pointInside:newP withEvent:event]) {
                 return self.centerBtn;
             }
         }

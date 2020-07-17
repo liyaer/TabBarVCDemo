@@ -10,6 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+@class WLCustomTabBar;
+@protocol WLCustomTabBarDelegate <NSObject>
+
+- (void)tabBar:(WLCustomTabBar *)tabBar didSelectIndexFrom:(NSInteger)from to:(NSInteger)to;
+
+@end
+
+
 @interface WLCustomTabBar : UIView
 
 - (instancetype)initWithFrame:(CGRect)frame
@@ -18,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
   barItemTitleUnselectedColor:(UIColor *)itemTitleUnselectedColor
     barItemSelectedImageNames:(NSArray<NSString *> *)itemSelectedImageNames
   barItemUnselectedImageNames:(NSArray<NSString *> *)itemUnselectedImageNames;
+
+@property (nonatomic, weak) id<WLCustomTabBarDelegate> delegate;
 
 @end
 

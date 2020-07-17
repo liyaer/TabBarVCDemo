@@ -10,10 +10,7 @@
 #import "WLCustomTabBar.h"
 
 
-@interface WLCustomTabBarVC () {
-    WLCenterStyle _centerStyle;
-}
-@property (nonatomic, strong) WLCustomTabBar *customTabBar;
+@interface WLCustomTabBarVC ()<WLCustomTabBarDelegate>
 
 @end
 
@@ -36,14 +33,13 @@
         BOOL countNoZero = names.count > 0;
         
         if (countEqual && countNoZero) {
-            
-            _centerStyle = centerStyle;
-            
+                        
             for (int i = 0; i < names.count; i++) {
                 [self setupChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:nil selectedImage:nil];
             }
             
-            WLCustomTabBar *customTabBar = [[WLCustomTabBar alloc] initWithFrame:self.tabBar.bounds barItemTitles:titles barItemTitleSelectedColor:selectedColor barItemTitleUnselectedColor:unSelectedColor barItemSelectedImageNames:images barItemUnselectedImageNames:selectedImages];
+            WLCustomTabBar *customTabBar = [[WLCustomTabBar alloc] initWithFrame:self.tabBar.bounds barItemTitles:titles barItemTitleSelectedColor:selectedColor barItemTitleUnselectedColor:unSelectedColor barItemSelectedImageNames:selectedImages barItemUnselectedImageNames:images];
+            customTabBar.delegate = self;
             [self.tabBar addSubview:customTabBar];
         } else {
             NSLog(@"%@ 入参异常", [self class]);
@@ -57,7 +53,7 @@
     
     [super viewWillLayoutSubviews];
     
-    // 移除原有的UITabBarButton
+    // 移除原有的UITabBarButton(继承自UIControl)
     for (UIView *subView in self.tabBar.subviews) {
         
         // UITabBarButton私有API, 普通开发者不能使用
@@ -68,18 +64,16 @@
     }
 }
 
-#pragma mark - 懒加载
+#pragma mark - WLCustomTabBarDelegate
 
-//- (WLCustomTabBar *)customTabBar {
-//
-//    if (!_customTabBar) {
-//
-//        _customTabBar = [[WLCustomTabBar alloc] init];
-//        _customTabBar.frame = self.tabBar.bounds;
-//        _customTabBar.backgroundColor = [UIColor blueColor];
-//    }
-//
-//    return _customTabBar;
-//}
+- (void)tabBar:(WLCustomTabBar *)tabBar didSelectIndexFrom:(NSInteger)from to:(NSInteger)to {
+    
+    if (to == 10086) {
+        NSLog(@"中间特殊按钮点击");
+    } else {
+        // 使控制器跟随按钮点击进行切换
+        self.selectedIndex = to;
+    }
+}
 
 @end
