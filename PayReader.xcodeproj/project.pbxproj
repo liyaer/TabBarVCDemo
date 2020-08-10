@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		047A843C24C82DF400EC6ED9 /* WLDrawTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A843B24C82DF400EC6ED9 /* WLDrawTabBarVC.m */; };
+		047A843F24C82E3C00EC6ED9 /* WLDrawTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A843E24C82E3C00EC6ED9 /* WLDrawTabBarView.m */; };
+		0489DE2324DD457E00CF8F53 /* WLSystemNomalTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489DE2224DD457E00CF8F53 /* WLSystemNomalTabBarVC.m */; };
 		048D614424A98CC60034D4F0 /* WLCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 048D614324A98CC60034D4F0 /* WLCustomTabBar.m */; };
+		0490E97224DC038C00EB221B /* 视图层级.png in Resources */ = {isa = PBXBuildFile; fileRef = 0490E97124DC038C00EB221B /* 视图层级.png */; };
 		3C18AA9B24B02420005F86AA /* WLBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AA9A24B02420005F86AA /* WLBaseTabBarController.m */; };
-		3C18AA9E24B02554005F86AA /* WLMemoryTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AA9D24B02554005F86AA /* WLMemoryTabBarVC.m */; };
+		3C18AA9E24B02554005F86AA /* WLSystemSpecialTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AA9D24B02554005F86AA /* WLSystemSpecialTabBarVC.m */; };
 		3C18AAA124B026F8005F86AA /* WLKvcTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AAA024B026F8005F86AA /* WLKvcTabBarVC.m */; };
 		3C18AAA424B0285B005F86AA /* WLBaseTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AAA324B0285B005F86AA /* WLBaseTabBar.m */; };
 		3C18AAA724B028D1005F86AA /* WLKvcTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AAA624B028D1005F86AA /* WLKvcTabBar.m */; };
@@ -59,14 +63,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		047A843A24C82DF400EC6ED9 /* WLDrawTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLDrawTabBarVC.h; sourceTree = "<group>"; };
+		047A843B24C82DF400EC6ED9 /* WLDrawTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDrawTabBarVC.m; sourceTree = "<group>"; };
+		047A843D24C82E3C00EC6ED9 /* WLDrawTabBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLDrawTabBarView.h; sourceTree = "<group>"; };
+		047A843E24C82E3C00EC6ED9 /* WLDrawTabBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDrawTabBarView.m; sourceTree = "<group>"; };
+		0489DE2124DD457E00CF8F53 /* WLSystemNomalTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLSystemNomalTabBarVC.h; sourceTree = "<group>"; };
+		0489DE2224DD457E00CF8F53 /* WLSystemNomalTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLSystemNomalTabBarVC.m; sourceTree = "<group>"; };
 		048D614224A98CC60034D4F0 /* WLCustomTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCustomTabBar.h; sourceTree = "<group>"; };
 		048D614324A98CC60034D4F0 /* WLCustomTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCustomTabBar.m; sourceTree = "<group>"; };
 		048D614824A999980034D4F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		048D614924A99B150034D4F0 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		0490E97124DC038C00EB221B /* 视图层级.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视图层级.png"; sourceTree = "<group>"; };
 		3C18AA9924B02420005F86AA /* WLBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLBaseTabBarController.h; sourceTree = "<group>"; };
 		3C18AA9A24B02420005F86AA /* WLBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLBaseTabBarController.m; sourceTree = "<group>"; };
-		3C18AA9C24B02554005F86AA /* WLMemoryTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLMemoryTabBarVC.h; sourceTree = "<group>"; };
-		3C18AA9D24B02554005F86AA /* WLMemoryTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLMemoryTabBarVC.m; sourceTree = "<group>"; };
+		3C18AA9C24B02554005F86AA /* WLSystemSpecialTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLSystemSpecialTabBarVC.h; sourceTree = "<group>"; };
+		3C18AA9D24B02554005F86AA /* WLSystemSpecialTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLSystemSpecialTabBarVC.m; sourceTree = "<group>"; };
 		3C18AA9F24B026F8005F86AA /* WLKvcTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLKvcTabBarVC.h; sourceTree = "<group>"; };
 		3C18AAA024B026F8005F86AA /* WLKvcTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLKvcTabBarVC.m; sourceTree = "<group>"; };
 		3C18AAA224B0285B005F86AA /* WLBaseTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLBaseTabBar.h; sourceTree = "<group>"; };
@@ -163,8 +174,15 @@
 		3C18AA9024B0124D005F86AA /* 方式一 */ = {
 			isa = PBXGroup;
 			children = (
-				3C18AA9C24B02554005F86AA /* WLMemoryTabBarVC.h */,
-				3C18AA9D24B02554005F86AA /* WLMemoryTabBarVC.m */,
+				0489DE2124DD457E00CF8F53 /* WLSystemNomalTabBarVC.h */,
+				0489DE2224DD457E00CF8F53 /* WLSystemNomalTabBarVC.m */,
+				3C18AA9C24B02554005F86AA /* WLSystemSpecialTabBarVC.h */,
+				3C18AA9D24B02554005F86AA /* WLSystemSpecialTabBarVC.m */,
+				0490E97124DC038C00EB221B /* 视图层级.png */,
+				047A843A24C82DF400EC6ED9 /* WLDrawTabBarVC.h */,
+				047A843B24C82DF400EC6ED9 /* WLDrawTabBarVC.m */,
+				047A843D24C82E3C00EC6ED9 /* WLDrawTabBarView.h */,
+				047A843E24C82E3C00EC6ED9 /* WLDrawTabBarView.m */,
 			);
 			path = "方式一";
 			sourceTree = "<group>";
@@ -191,13 +209,6 @@
 				3C1BF72C24B742BB000CEF7A /* WLCustomBtn.m */,
 			);
 			path = "方式三";
-			sourceTree = "<group>";
-		};
-		3C1C168924AF6B51007A4DFC /* 写成类簇 */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "写成类簇";
 			sourceTree = "<group>";
 		};
 		D2DE96C21F90665900E0E050 = {
@@ -233,7 +244,6 @@
 				3C18AA9A24B02420005F86AA /* WLBaseTabBarController.m */,
 				3C18AAA224B0285B005F86AA /* WLBaseTabBar.h */,
 				3C18AAA324B0285B005F86AA /* WLBaseTabBar.m */,
-				3C1C168924AF6B51007A4DFC /* 写成类簇 */,
 				3C18AA9024B0124D005F86AA /* 方式一 */,
 				3C18AA9124B012B6005F86AA /* 方式二 */,
 				3C18AA9224B012BF005F86AA /* 方式三 */,
@@ -278,9 +288,9 @@
 			isa = PBXGroup;
 			children = (
 				D2DE97271F908A5200E0E050 /* BookShelf（书架） */,
+				D2DE97301F908A5200E0E050 /* Recommend（精选） */,
 				D2DE972A1F908A5200E0E050 /* Classify（分类） */,
 				D2DE972D1F908A5200E0E050 /* Personal（我的） */,
-				D2DE97301F908A5200E0E050 /* Recommend（精选） */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -457,6 +467,7 @@
 				D2DE97421F908A5B00E0E050 /* 1@2x.png in Resources */,
 				D2DE97471F908A5B00E0E050 /* 44@2x.png in Resources */,
 				D2DE96DE1F90665900E0E050 /* LaunchScreen.storyboard in Resources */,
+				0490E97224DC038C00EB221B /* 视图层级.png in Resources */,
 				D2DE97461F908A5B00E0E050 /* 3@2x.png in Resources */,
 				D2DE97451F908A5B00E0E050 /* 33@2x.png in Resources */,
 				D2DE96DB1F90665900E0E050 /* Assets.xcassets in Resources */,
@@ -494,18 +505,21 @@
 			files = (
 				3C18AA9B24B02420005F86AA /* WLBaseTabBarController.m in Sources */,
 				D2DE96D31F90665900E0E050 /* AppDelegate.m in Sources */,
+				047A843C24C82DF400EC6ED9 /* WLDrawTabBarVC.m in Sources */,
 				D2DE97171F90737D00E0E050 /* FZTabBarVC.m in Sources */,
 				048D614424A98CC60034D4F0 /* WLCustomTabBar.m in Sources */,
-				3C18AA9E24B02554005F86AA /* WLMemoryTabBarVC.m in Sources */,
+				3C18AA9E24B02554005F86AA /* WLSystemSpecialTabBarVC.m in Sources */,
 				3C18AAA724B028D1005F86AA /* WLKvcTabBar.m in Sources */,
 				D2DE97331F908A5200E0E050 /* BookShelfVC.m in Sources */,
 				3C18AAA424B0285B005F86AA /* WLBaseTabBar.m in Sources */,
 				D2DE97341F908A5200E0E050 /* ClassifyVC.m in Sources */,
 				D2755BAF204E922300F8DD71 /* SubmitTabBarVC.m in Sources */,
 				3C1BF72D24B742BB000CEF7A /* WLCustomBtn.m in Sources */,
+				0489DE2324DD457E00CF8F53 /* WLSystemNomalTabBarVC.m in Sources */,
 				3C18AAA124B026F8005F86AA /* WLKvcTabBarVC.m in Sources */,
 				D2DE97351F908A5200E0E050 /* PersonalVC.m in Sources */,
 				3C1BF72A24B73B8F000CEF7A /* WLCustomTabBarVC.m in Sources */,
+				047A843F24C82E3C00EC6ED9 /* WLDrawTabBarView.m in Sources */,
 				D2DE97361F908A5200E0E050 /* RecommendVC.m in Sources */,
 				D2DE96D01F90665900E0E050 /* main.m in Sources */,
 			);
@@ -656,12 +670,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MCBLL5HW5;
 				INFOPLIST_FILE = PayReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.du.PayReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -669,12 +686,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 8MCBLL5HW5;
 				INFOPLIST_FILE = PayReader/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.du.PayReader;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

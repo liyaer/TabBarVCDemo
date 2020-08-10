@@ -29,7 +29,7 @@
             [self setValue:[WLKvcTabBar tabBarWithCenterStyle:centerStyle barItemCounts:images.count] forKey:@"tabBar"];
 
             for (int i = 0; i < names.count; i++) {
-                [self setupChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i]];
+                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i]];
             }
             
             [self modifyBarTitleSelectedColor:selectedColor unSelectedColor:unSelectedColor];

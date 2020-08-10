@@ -52,7 +52,7 @@
     if (_centerStyle == WLCenterStyleHump) {
         _centerBtn.center = CGPointMake(tabBarWidth/2, 0);
     } else {
-        _centerBtn.center = CGPointMake(tabBarWidth/2, TabBarHeight/2);
+        _centerBtn.center = CGPointMake(tabBarWidth/2, cDTabBarHeight/2);
     }
     
     //设置其他tabBarItem的位置
@@ -67,7 +67,7 @@
         }
         
         itemX = itemWidth * (index>(_itemCounts/2-1) ? index+1 : index);
-        item.frame = CGRectMake(itemX, 0, itemWidth, TabBarHeight);
+        item.frame = CGRectMake(itemX, 0, itemWidth, cDTabBarHeight);
         
         index++;
     }
@@ -107,7 +107,7 @@
 - (UIButton *)centerBtn {
     if (!_centerBtn) {
         _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _centerBtn.frame = CGRectMake(0, 0, TabBarHeight, TabBarHeight);
+        _centerBtn.frame = CGRectMake(0, 0, cDTabBarHeight, cDTabBarHeight);
         [_centerBtn setImage:[UIImage imageNamed:@"5"] forState:UIControlStateNormal];
         [_centerBtn addTarget:self action:@selector(centerBtnClicked) forControlEvents:UIControlEventTouchUpInside];
         _centerBtn.adjustsImageWhenHighlighted = NO;

@@ -6,10 +6,10 @@
 //  Copyright © 2020 杜文亮. All rights reserved.
 //
 
-#import "WLMemoryTabBarVC.h"
+#import "WLSystemSpecialTabBarVC.h"
 
 
-@interface WLMemoryTabBarVC ()<UITabBarControllerDelegate> {
+@interface WLSystemSpecialTabBarVC ()<UITabBarControllerDelegate> {
     WLCenterStyle _centerStyle;
 }
 @property (nonatomic, strong) UIButton *centerBtn;
@@ -17,66 +17,46 @@
 @end
 
 
-@implementation WLMemoryTabBarVC
+@implementation WLSystemSpecialTabBarVC
 
-#pragma mark - 题外话：测试这几个方法调用顺序。测试结果：看打印结果即可，除了得出调用顺序关系外，还能得到指定初始化方法最终不会调用init方法的结论
+#pragma mark - 初始化
 
-+ (void)load {
-    
-    NSLog(@"load");
-}
-
-+ (void)initialize {
-    
-    NSLog(@"initalize");
-}
-
-- (instancetype)init {
+- (instancetype)initWithVCNames:(NSArray<NSString *> *)names
+                         titles:(NSArray<NSString *> *)titles
+                         images:(NSArray<NSString *> *)images
+                 selectedImages:(NSArray<NSString *> *)selectedImages
+             selectedTitleColor:(UIColor *)selectedColor
+           unSelectedTitleColor:(UIColor *)unSelectedColor
+                    centerStyle:(WLCenterStyle)centerStyle {
     
     if (self = [super init]) {
-        NSLog(@"init");
-    }
-    
-    return self;
-}
-
-#pragma mark - 正题
-
-- (instancetype)initWithVCNames:(NSArray<NSString *> *)names titles:(NSArray<NSString *> *)titles images:(NSArray<NSString *> *)images selectedImages:(NSArray<NSString *> *)selectedImages selectedTitleColor:(UIColor *)selectedColor unSelectedTitleColor:(UIColor *)unSelectedColor centerStyle:(WLCenterStyle)centerStyle {
-    
-    if (self = [super init]) {
-        
         NSLog(@"custom init");
                 
         BOOL countEqual = (names.count == titles.count) && (titles.count == images.count) && (images.count == selectedImages.count);
         BOOL countNoZero = names.count > 0;
-        
         if (countEqual && countNoZero) {
-            
             _centerStyle = centerStyle;
             
             for (int i = 0; i < names.count; i++) {
-                
                 if (i == names.count/2) {
-                    
                     UIViewController *middleVC = [UIViewController new];
                     [self addChildViewController:middleVC];
                     continue;
                 }
                 
-                [self setupChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i]];
+                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i]];
             }
             
             [self modifyBarTitleSelectedColor:selectedColor unSelectedColor:unSelectedColor];
             
-            [self.tabBar addSubview:self.centerBtn];
-            
-            self.delegate = self;
+            if (_centerStyle != WLCenterStyleNone) {
+                [self.tabBar addSubview:self.centerBtn];
+                self.delegate = self;
+            }
         } else {
             NSLog(@"%@ 入参异常", [self class]);
         }
     }
-    
     return self;
 }
 
@@ -90,7 +70,6 @@
     }
     
     [self centerBtnClicked];
-    
     return NO;
 }
 
@@ -103,16 +82,14 @@
 }
 
 //解决中间特殊按钮凸起部分不能响应点击事件
-//该次点击没有其他事件响应时，才会调用下面的方法（比如点击tabBarItem，会拦截响应该方法）
+//该次点击没有其他事件响应时，才会调用下面的方法（比如点击tabBarItem，会拦截响应该方法。原理：事件传递和响应者链）
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     [super touchesBegan:touches withEvent:event];
     
     if (_centerStyle == WLCenterStyleHump) {
-        
         //只有当前正在显示tabBarController时，开启中间特殊按钮的交互
         if (!self.tabBar.hidden) {
-            
             //判断点击是否在特殊按钮的范围内
             CGPoint touch = [[touches anyObject] locationInView:_centerBtn];
             if (CGRectContainsPoint(_centerBtn.bounds, touch)) {
@@ -127,17 +104,27 @@
 - (UIButton *)centerBtn {
     if (!_centerBtn) {
         _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _centerBtn.frame = CGRectMake(0, 0, TabBarHeight, TabBarHeight);
+        _centerBtn.frame = CGRectMake(0, 0, cDTabBarHeight, cDTabBarHeight);
         if (_centerStyle == WLCenterStyleHump) {
             _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, 0);
         } else {
-            _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, TabBarHeight/2);
+            _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, cDTabBarHeight/2);
         }
         [_centerBtn setImage:[UIImage imageNamed:@"5"] forState:UIControlStateNormal];
-        //中间tabBarItem的点击事件会拦截btn的点击事件，因此这里设置无效
+/*
+    现象：中间tabBarItem的点击事件会拦截btn的点击事件，因此这里设置无效。
+    原因：系统添加tabBarItem的时机在添加btn之后（请看“视图层级.png”，同时也解释了方式三为什么不会影响tabBarItem的显示和交互）
+    原理：hit-test（事件传递和响应者链）
+ */
 //        [_centerBtn addTarget:self action:@selector(centerBtnClicked) forControlEvents:UIControlEventTouchUpInside];
     }
     return _centerBtn;
 }
+
+/*
+  0，增加无特殊按钮模式
+  1，指定特殊按钮位置
+  2，centerBtn frame 的最优设置
+ */
 
 @end

@@ -21,10 +21,12 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)setupChildVC:(UIViewController *)vc title:(NSString *)title image:(NSString *)image selectedImage:(NSString *)selectedImage {
+- (void)addChildVC:(UIViewController *)vc
+             title:(NSString *)title
+             image:(NSString *)image
+     selectedImage:(NSString *)selectedImage {
     
     if (vc) {
-    
         if (title) {
             vc.title = title;
             vc.tabBarItem.title = title;
@@ -46,7 +48,6 @@
 - (void)modifyBarTitleSelectedColor:(UIColor *)selectedColor unSelectedColor:(UIColor *)unSelectedColor {
     
     if (selectedColor) {
-        
         if (@available(iOS 10.0, *)) {
             self.tabBar.tintColor = selectedColor;
             //or
@@ -57,7 +58,6 @@
     }
     
     if (unSelectedColor) {
-        
         if (@available(iOS 10.0, *)) {
             self.tabBar.unselectedItemTintColor = unSelectedColor;
             //or
@@ -66,6 +66,44 @@
             [[UITabBarItem appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : unSelectedColor} forState:UIControlStateNormal];
         }
     }
+}
+
+- (void)modifyTabBarTopLineWithLineImage:(UIImage *)lineImage backgroundImage:(UIImage *)bgImage {
+    
+    if (lineImage) {
+        self.tabBar.shadowImage = lineImage;
+    }
+    
+    if (bgImage) {
+        self.tabBar.backgroundImage = bgImage;
+    }
+}
+
+- (void)modifyTabBarTopLineWithLineColor:(UIColor *)lineColor backgroundColor:(UIColor *)bgColor {
+    
+    if (lineColor) {
+        self.tabBar.shadowImage = [self imageWithColor:lineColor];
+    }
+    
+    if (bgColor) {
+        self.tabBar.backgroundImage = [self imageWithColor:bgColor];
+    }
+}
+
+- (UIImage *)imageWithColor:(UIColor *)color {
+    
+    CGRect rect = CGRectMake(0, 0, 1, 1);
+    UIGraphicsBeginImageContext(rect.size);
+
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+
+    UIImage *img = UIGraphicsGetImageFromCurrentImageContext();
+
+    UIGraphicsEndImageContext();
+    
+    return img;
 }
 
 @end

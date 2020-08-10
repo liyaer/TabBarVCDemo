@@ -7,14 +7,18 @@
 //
 
 #import "AppDelegate.h"
+
 #import "FZTabBarVC.h"
 #import "SubmitTabBarVC.h"
-#import "WLMemoryTabBarVC.h"
+
+#import "WLSystemNomalTabBarVC.h"
+#import "WLSystemSpecialTabBarVC.h"
 #import "WLKvcTabBarVC.h"
 #import "WLCustomTabBarVC.h"
+#import "WLDrawTabBarVC.h"
 
 
-#define TabBarType 4
+#define TabBarType 2
 
 
 @interface AppDelegate ()
@@ -68,8 +72,23 @@
 
 #pragma mark - 封装方法调用集合
 
--(void)setRootVC
-{
+- (void)setRootVC {
+
+#if 0
+    NSArray *vcNames = @[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"PersonalVC"];
+    NSArray *titles = @[@"书架",@"精选",@"分类",@"我的"];
+    NSArray *images = @[@"1",@"2",@"3",@"4"];
+    NSArray *selectImages = @[@"11",@"22",@"33",@"44"];
+#else
+    NSArray *vcNames = @[@"BookShelfVC",@"RecommendVC",@"",@"ClassifyVC",@"PersonalVC"];
+    NSArray *titles = @[@"书架",@"精选",@"",@"分类",@"我的"];
+    NSArray *images = @[@"1",@"2",@"",@"3",@"4"];
+    NSArray *selectImages = @[@"11",@"22",@"",@"33",@"44"];
+#endif
+    UIColor *titleColor = [UIColor blackColor];
+    UIColor *selectTitleColor = [UIColor purpleColor];
+    
+    
 //点击动画和双击刷新建议分开单独使用；若要一起使用，需要考虑某些动画效果和双击刷新的兼容性
 #if (TabBarType == 0)
     FZTabBarVC *tabBar = [[FZTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"分类",@"我的"] images:@[@"1",@"2",@"3",@"4"] selectedImages:@[@"11",@"22",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:nil];
@@ -79,11 +98,14 @@
 #elif (TabBarType == 1)
     SubmitTabBarVC *tabBar = [[SubmitTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"分类",@"我的"] images:@[@"1",@"2",@"3",@"4"] selectedImages:@[@"11",@"22",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:nil];
 #elif (TabBarType == 2)
-    WLMemoryTabBarVC *tabBar = [[WLMemoryTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"",@"ClassifyVC",@"PersonalVC"] titles:@[@"书架",@"精选",@"",@"分类",@"我的"] images:@[@"1",@"2",@"",@"3",@"4"] selectedImages:@[@"11",@"22",@"",@"33",@"44"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleNormal];
+//    WLSystemNomalTabBarVC *tabBar = [[WLSystemNomalTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor];
+    WLSystemSpecialTabBarVC *tabBar = [[WLSystemSpecialTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor centerStyle:WLCenterStyleNormal];
 #elif (TabBarType == 3)
     WLKvcTabBarVC *tabBar = [[WLKvcTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC"] titles:@[@"书架",@"精选"] images:@[@"1",@"2"] selectedImages:@[@"11",@"22"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleHump];
-#else
+#elif (TabBarType == 4)
        WLCustomTabBarVC *tabBar = [[WLCustomTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC"] titles:@[@"书架",@"精选"] images:@[@"1",@"2"] selectedImages:@[@"11",@"22"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleNormal];
+#else
+    WLDrawTabBarVC *tabBar = [[WLDrawTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"ClassifyVC"] titles:@[@"书架",@"精选",@"分类"] images:@[@"1",@"2",@"3"] selectedImages:@[@"11",@"22",@"33"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor]];
 #endif
     self.window.rootViewController = tabBar;
 }

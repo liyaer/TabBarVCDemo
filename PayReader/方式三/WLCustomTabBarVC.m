@@ -35,7 +35,7 @@
         if (countEqual && countNoZero) {
                         
             for (int i = 0; i < names.count; i++) {
-                [self setupChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:nil selectedImage:nil];
+                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:nil selectedImage:nil];
             }
             
             WLCustomTabBar *customTabBar = [[WLCustomTabBar alloc] initWithFrame:self.tabBar.bounds barItemTitles:titles barItemTitleSelectedColor:selectedColor barItemTitleUnselectedColor:unSelectedColor barItemSelectedImageNames:selectedImages barItemUnselectedImageNames:images];

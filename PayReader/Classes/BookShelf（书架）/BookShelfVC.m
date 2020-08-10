@@ -14,20 +14,31 @@
 
 @implementation BookShelfVC
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    NSLog(@"1111111");
-    self.view.backgroundColor = [UIColor brownColor];
+- (instancetype)init {
     
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 100, 60)];
-    [btn setTitle:@"同一个btn的单双击时间" forState:UIControlStateNormal];
-    [btn addTarget:self action:@selector(pushVC) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:btn];
+    if (self = [super init]) {
+        //在init（包括重写、指定初始化）操作 View，会导致viewDidLoad提前调用（原因可参考笔记中 UIViewController生命周期）
+        self.view.backgroundColor = [UIColor whiteColor];
+        
+        NSLog(@"%@ init", [self class]);
+    }
+    return self;
+}
+
+- (void)viewDidLoad {
+    
+    [super viewDidLoad];
+
+    self.view.backgroundColor = [UIColor orangeColor];
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pushVC)];
+    [self.view addGestureRecognizer:tap];
+    
+    NSLog(@"111111 %@ viewDidLoad", [self class]);
 }
 
 - (void)pushVC {
+    
     UIViewController *vc = [UIViewController new];
     vc.hidesBottomBarWhenPushed = YES;
     vc.view.backgroundColor = [UIColor purpleColor];

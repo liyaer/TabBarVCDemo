@@ -66,9 +66,9 @@ static const NSInteger TagAddedValue = 10; //设置btn tag时所加的固定值
     
     //设置中间特殊按钮的位置
 //    if (_centerStyle == WLCenterStyleHump) {
-        _centerBtn.center = CGPointMake(tabBarWidth/2, 0);
+//        _centerBtn.center = CGPointMake(tabBarWidth/2, 0);
 //    } else {
-//        _centerBtn.center = CGPointMake(tabBarWidth/2, TabBarHeight/2);
+        _centerBtn.center = CGPointMake(tabBarWidth/2, cDTabBarHeight/2);
 //    }
     
     //设置其他tabBarItem的位置
@@ -78,7 +78,7 @@ static const NSInteger TagAddedValue = 10; //设置btn tag时所加的固定值
         
         UIButton *btn = [self viewWithTag:(i + TagAddedValue)];
         itemX = itemWidth * (i>(_itemCounts/2-1) ? i+1 : i);
-        btn.frame = CGRectMake(itemX, 0, itemWidth, TabBarHeight);
+        btn.frame = CGRectMake(itemX, 0, itemWidth, cDTabBarHeight);
     }
 }
 
@@ -138,7 +138,7 @@ static const NSInteger TagAddedValue = 10; //设置btn tag时所加的固定值
     if (!_centerBtn) {
         
         _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _centerBtn.frame = CGRectMake(0, 0, TabBarHeight, TabBarHeight);
+        _centerBtn.frame = CGRectMake(0, 0, cDTabBarHeight, cDTabBarHeight);
         [_centerBtn setImage:[UIImage imageNamed:@"5"] forState:UIControlStateNormal];
         _centerBtn.adjustsImageWhenHighlighted = NO;
         _centerBtn.tag = 10086;
