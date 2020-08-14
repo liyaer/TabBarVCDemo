@@ -25,7 +25,7 @@
                  selectedImages:(NSArray<NSString *> *)selectedImages
              selectedTitleColor:(UIColor *)selectedColor
            unSelectedTitleColor:(UIColor *)unSelectedColor
-                    centerStyle:(WLCenterStyle)centerStyle {
+                    centerStyle:(WLTabBarItemStyle)centerStyle {
     
     if (self = [super init]) {
         
@@ -35,7 +35,7 @@
         if (countEqual && countNoZero) {
                         
             for (int i = 0; i < names.count; i++) {
-                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:nil selectedImage:nil];
+                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:nil selectedImage:nil useNav:YES];
             }
             
             WLCustomTabBar *customTabBar = [[WLCustomTabBar alloc] initWithFrame:self.tabBar.bounds barItemTitles:titles barItemTitleSelectedColor:selectedColor barItemTitleUnselectedColor:unSelectedColor barItemSelectedImageNames:selectedImages barItemUnselectedImageNames:images];

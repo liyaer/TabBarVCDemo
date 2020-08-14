@@ -36,7 +36,7 @@ static const CGFloat AddHeight = 50;
         if (countEqual && countNoZero) {
 
             for (int i = 0; i < names.count; i++) {
-                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i]];
+                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i] useNav:YES];
             }
 
             [self modifyBarTitleSelectedColor:selectedColor unSelectedColor:unSelectedColor];
@@ -79,7 +79,7 @@ static const CGFloat AddHeight = 50;
             item.titlePositionAdjustment = UIOffsetMake(0, 0);
         }else{
             item.imageInsets = UIEdgeInsetsMake(0, 0, 0, 0);
-            item.titlePositionAdjustment = UIOffsetMake(0, 100);
+            item.titlePositionAdjustment = UIOffsetMake(0, -5);
         }
     }
 }

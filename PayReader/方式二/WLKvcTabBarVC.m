@@ -17,7 +17,7 @@
 
 @implementation WLKvcTabBarVC
 
-- (instancetype)initWithVCNames:(NSArray<NSString *> *)names titles:(NSArray<NSString *> *)titles images:(NSArray<NSString *> *)images selectedImages:(NSArray<NSString *> *)selectedImages selectedTitleColor:(UIColor *)selectedColor unSelectedTitleColor:(UIColor *)unSelectedColor centerStyle:(WLCenterStyle)centerStyle {
+- (instancetype)initWithVCNames:(NSArray<NSString *> *)names titles:(NSArray<NSString *> *)titles images:(NSArray<NSString *> *)images selectedImages:(NSArray<NSString *> *)selectedImages selectedTitleColor:(UIColor *)selectedColor unSelectedTitleColor:(UIColor *)unSelectedColor centerStyle:(WLTabBarItemStyle)centerStyle {
     
     if (self = [super init]) {
                         
@@ -29,7 +29,7 @@
             [self setValue:[WLKvcTabBar tabBarWithCenterStyle:centerStyle barItemCounts:images.count] forKey:@"tabBar"];
 
             for (int i = 0; i < names.count; i++) {
-                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i]];
+                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i] useNav:YES];
             }
             
             [self modifyBarTitleSelectedColor:selectedColor unSelectedColor:unSelectedColor];

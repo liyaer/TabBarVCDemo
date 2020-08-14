@@ -13,10 +13,10 @@
 NS_ASSUME_NONNULL_BEGIN
 
 
-typedef NS_ENUM(NSInteger, WLCenterStyle) {
-    WLCenterStyleNone,
-    WLCenterStyleNormal,
-    WLCenterStyleHump
+typedef NS_ENUM(NSInteger, WLTabBarItemStyle) {
+//    WLCenterStyleNone,
+    WLTabBarItemNormal,
+    WLTabBarItemHump
 };
 
 

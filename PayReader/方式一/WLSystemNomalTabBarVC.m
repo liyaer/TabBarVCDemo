@@ -50,7 +50,7 @@
         BOOL countNoZero = names.count > 0;
         if (countEqual && countNoZero) {
             for (int i = 0; i < names.count; i++) {                
-                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i]];
+                [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i] useNav:YES];
             }
             
             [self modifyBarTitleSelectedColor:selectedColor unSelectedColor:unSelectedColor];

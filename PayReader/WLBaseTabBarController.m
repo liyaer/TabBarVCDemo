@@ -24,7 +24,8 @@
 - (void)addChildVC:(UIViewController *)vc
              title:(NSString *)title
              image:(NSString *)image
-     selectedImage:(NSString *)selectedImage {
+     selectedImage:(NSString *)selectedImage
+            useNav:(BOOL)use {
     
     if (vc) {
         if (title) {
@@ -40,8 +41,12 @@
             vc.tabBarItem.selectedImage = [[UIImage imageNamed:selectedImage] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         }
         
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
-        [self addChildViewController:nav];
+        if (use) {
+            UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:vc];
+            [self addChildViewController:nav];
+        } else {
+            [self addChildViewController:vc];
+        }
     }
 }
 

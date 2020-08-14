@@ -7,9 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0478A05724E22D8300265F4D /* special@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478A05524E22D8300265F4D /* special@3x.png */; };
+		0478A05824E22D8300265F4D /* special_s.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478A05624E22D8300265F4D /* special_s.png */; };
+		0478A05F24E28DB400265F4D /* SpecialVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0478A05E24E28DB400265F4D /* SpecialVC.m */; };
+		0478A06124E2946900265F4D /* 5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0478A06024E2946900265F4D /* 5@2x.png */; };
 		047A843C24C82DF400EC6ED9 /* WLDrawTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A843B24C82DF400EC6ED9 /* WLDrawTabBarVC.m */; };
 		047A843F24C82E3C00EC6ED9 /* WLDrawTabBarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 047A843E24C82E3C00EC6ED9 /* WLDrawTabBarView.m */; };
 		0489DE2324DD457E00CF8F53 /* WLSystemNomalTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 0489DE2224DD457E00CF8F53 /* WLSystemNomalTabBarVC.m */; };
+		048D2BD224E3978D004E5179 /* special_hump@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048D2BD124E3978D004E5179 /* special_hump@2x.png */; };
 		048D614424A98CC60034D4F0 /* WLCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 048D614324A98CC60034D4F0 /* WLCustomTabBar.m */; };
 		0490E97224DC038C00EB221B /* 视图层级.png in Resources */ = {isa = PBXBuildFile; fileRef = 0490E97124DC038C00EB221B /* 视图层级.png */; };
 		3C18AA9B24B02420005F86AA /* WLBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AA9A24B02420005F86AA /* WLBaseTabBarController.m */; };
@@ -21,7 +26,6 @@
 		3C1BF72D24B742BB000CEF7A /* WLCustomBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1BF72C24B742BB000CEF7A /* WLCustomBtn.m */; };
 		D2755BAF204E922300F8DD71 /* SubmitTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2755BAE204E922300F8DD71 /* SubmitTabBarVC.m */; };
 		D2755BB1204E9C4000F8DD71 /* Log1.png in Resources */ = {isa = PBXBuildFile; fileRef = D2755BB0204E9C3F00F8DD71 /* Log1.png */; };
-		D2755BB3204F7D5900F8DD71 /* 5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2755BB2204F7D5900F8DD71 /* 5@2x.png */; };
 		D2DE96D01F90665900E0E050 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE96CF1F90665900E0E050 /* main.m */; };
 		D2DE96D31F90665900E0E050 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE96D21F90665900E0E050 /* AppDelegate.m */; };
 		D2DE96D91F90665900E0E050 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2DE96D71F90665900E0E050 /* Main.storyboard */; };
@@ -30,7 +34,6 @@
 		D2DE96E91F90665900E0E050 /* PayReaderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE96E81F90665900E0E050 /* PayReaderTests.m */; };
 		D2DE96F41F90665900E0E050 /* PayReaderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE96F31F90665900E0E050 /* PayReaderUITests.m */; };
 		D2DE97171F90737D00E0E050 /* FZTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE97161F90737D00E0E050 /* FZTabBarVC.m */; };
-		D2DE97231F90870000E0E050 /* 55@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D2DE971C1F90870000E0E050 /* 55@2x.png */; };
 		D2DE97331F908A5200E0E050 /* BookShelfVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE97291F908A5200E0E050 /* BookShelfVC.m */; };
 		D2DE97341F908A5200E0E050 /* ClassifyVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE972C1F908A5200E0E050 /* ClassifyVC.m */; };
 		D2DE97351F908A5200E0E050 /* PersonalVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D2DE972F1F908A5200E0E050 /* PersonalVC.m */; };
@@ -63,12 +66,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0478A05524E22D8300265F4D /* special@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "special@3x.png"; sourceTree = "<group>"; };
+		0478A05624E22D8300265F4D /* special_s.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = special_s.png; sourceTree = "<group>"; };
+		0478A05D24E28DB400265F4D /* SpecialVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpecialVC.h; sourceTree = "<group>"; };
+		0478A05E24E28DB400265F4D /* SpecialVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpecialVC.m; sourceTree = "<group>"; };
+		0478A06024E2946900265F4D /* 5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5@2x.png"; sourceTree = "<group>"; };
 		047A843A24C82DF400EC6ED9 /* WLDrawTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLDrawTabBarVC.h; sourceTree = "<group>"; };
 		047A843B24C82DF400EC6ED9 /* WLDrawTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDrawTabBarVC.m; sourceTree = "<group>"; };
 		047A843D24C82E3C00EC6ED9 /* WLDrawTabBarView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLDrawTabBarView.h; sourceTree = "<group>"; };
 		047A843E24C82E3C00EC6ED9 /* WLDrawTabBarView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLDrawTabBarView.m; sourceTree = "<group>"; };
 		0489DE2124DD457E00CF8F53 /* WLSystemNomalTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLSystemNomalTabBarVC.h; sourceTree = "<group>"; };
 		0489DE2224DD457E00CF8F53 /* WLSystemNomalTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLSystemNomalTabBarVC.m; sourceTree = "<group>"; };
+		048D2BD124E3978D004E5179 /* special_hump@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "special_hump@2x.png"; sourceTree = "<group>"; };
 		048D614224A98CC60034D4F0 /* WLCustomTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLCustomTabBar.h; sourceTree = "<group>"; };
 		048D614324A98CC60034D4F0 /* WLCustomTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLCustomTabBar.m; sourceTree = "<group>"; };
 		048D614824A999980034D4F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -91,7 +100,6 @@
 		D2755BAD204E922300F8DD71 /* SubmitTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SubmitTabBarVC.h; sourceTree = "<group>"; };
 		D2755BAE204E922300F8DD71 /* SubmitTabBarVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SubmitTabBarVC.m; sourceTree = "<group>"; };
 		D2755BB0204E9C3F00F8DD71 /* Log1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Log1.png; sourceTree = "<group>"; };
-		D2755BB2204F7D5900F8DD71 /* 5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5@2x.png"; sourceTree = "<group>"; };
 		D2DE96CB1F90665900E0E050 /* PayReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PayReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2DE96CF1F90665900E0E050 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D2DE96D11F90665900E0E050 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -108,7 +116,6 @@
 		D2DE96F51F90665900E0E050 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2DE97151F90737D00E0E050 /* FZTabBarVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FZTabBarVC.h; sourceTree = "<group>"; };
 		D2DE97161F90737D00E0E050 /* FZTabBarVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FZTabBarVC.m; sourceTree = "<group>"; };
-		D2DE971C1F90870000E0E050 /* 55@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "55@2x.png"; sourceTree = "<group>"; };
 		D2DE97281F908A5200E0E050 /* BookShelfVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookShelfVC.h; sourceTree = "<group>"; };
 		D2DE97291F908A5200E0E050 /* BookShelfVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookShelfVC.m; sourceTree = "<group>"; };
 		D2DE972B1F908A5200E0E050 /* ClassifyVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassifyVC.h; sourceTree = "<group>"; };
@@ -287,6 +294,8 @@
 		D2DE97261F908A5200E0E050 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				0478A05D24E28DB400265F4D /* SpecialVC.h */,
+				0478A05E24E28DB400265F4D /* SpecialVC.m */,
 				D2DE97271F908A5200E0E050 /* BookShelf（书架） */,
 				D2DE97301F908A5200E0E050 /* Recommend（精选） */,
 				D2DE972A1F908A5200E0E050 /* Classify（分类） */,
@@ -334,9 +343,11 @@
 		D2DE97371F908A5B00E0E050 /* ImagesResource */ = {
 			isa = PBXGroup;
 			children = (
+				0478A06024E2946900265F4D /* 5@2x.png */,
+				0478A05524E22D8300265F4D /* special@3x.png */,
+				0478A05624E22D8300265F4D /* special_s.png */,
+				048D2BD124E3978D004E5179 /* special_hump@2x.png */,
 				D2DE97381F908A5B00E0E050 /* TabBar */,
-				D2DE971C1F90870000E0E050 /* 55@2x.png */,
-				D2755BB2204F7D5900F8DD71 /* 5@2x.png */,
 			);
 			path = ImagesResource;
 			sourceTree = "<group>";
@@ -473,10 +484,12 @@
 				D2DE96DB1F90665900E0E050 /* Assets.xcassets in Resources */,
 				D2DE97411F908A5B00E0E050 /* 11@2x.png in Resources */,
 				D2DE97431F908A5B00E0E050 /* 22@2x.png in Resources */,
-				D2755BB3204F7D5900F8DD71 /* 5@2x.png in Resources */,
-				D2DE97231F90870000E0E050 /* 55@2x.png in Resources */,
+				0478A05824E22D8300265F4D /* special_s.png in Resources */,
 				D2DE97481F908A5B00E0E050 /* 4@2x.png in Resources */,
 				D2755BB1204E9C4000F8DD71 /* Log1.png in Resources */,
+				0478A06124E2946900265F4D /* 5@2x.png in Resources */,
+				0478A05724E22D8300265F4D /* special@3x.png in Resources */,
+				048D2BD224E3978D004E5179 /* special_hump@2x.png in Resources */,
 				D2DE96D91F90665900E0E050 /* Main.storyboard in Resources */,
 				D2DE97441F908A5B00E0E050 /* 2@2x.png in Resources */,
 			);
@@ -520,6 +533,7 @@
 				D2DE97351F908A5200E0E050 /* PersonalVC.m in Sources */,
 				3C1BF72A24B73B8F000CEF7A /* WLCustomTabBarVC.m in Sources */,
 				047A843F24C82E3C00EC6ED9 /* WLDrawTabBarView.m in Sources */,
+				0478A05F24E28DB400265F4D /* SpecialVC.m in Sources */,
 				D2DE97361F908A5200E0E050 /* RecommendVC.m in Sources */,
 				D2DE96D01F90665900E0E050 /* main.m in Sources */,
 			);

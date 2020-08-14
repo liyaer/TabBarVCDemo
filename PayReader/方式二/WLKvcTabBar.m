@@ -10,7 +10,7 @@
 
 
 @interface WLKvcTabBar () {
-    WLCenterStyle _centerStyle;
+    WLTabBarItemStyle _centerStyle;
     NSInteger _itemCounts;
 }
 @property (nonatomic, strong) UIButton *centerBtn;
@@ -22,7 +22,7 @@
 
 #pragma mark - 初始化
 
-+ (instancetype)tabBarWithCenterStyle:(WLCenterStyle)centerStyle barItemCounts:(NSInteger)itemCounts {
++ (instancetype)tabBarWithCenterStyle:(WLTabBarItemStyle)centerStyle barItemCounts:(NSInteger)itemCounts {
     
     WLKvcTabBar *tabBar = [[self alloc] init];
     tabBar -> _centerStyle = centerStyle;
@@ -49,7 +49,7 @@
     CGFloat tabBarWidth = CGRectGetWidth(self.frame);
     
     //设置中间特殊按钮的位置
-    if (_centerStyle == WLCenterStyleHump) {
+    if (_centerStyle == WLTabBarItemHump) {
         _centerBtn.center = CGPointMake(tabBarWidth/2, 0);
     } else {
         _centerBtn.center = CGPointMake(tabBarWidth/2, cDTabBarHeight/2);
@@ -83,7 +83,7 @@
 //重写hitTest方法，去监听中间按钮的点击，目的是为了让凸出的部分点击也有反应
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
 
-    if (_centerStyle == WLCenterStyleHump) {
+    if (_centerStyle == WLTabBarItemHump) {
 
         //判断当前手指是否点击到中间按钮上，如果是，则响应按钮点击，其他则系统处理
         //首先判断当前View是否被隐藏了，隐藏了就不需要处理了

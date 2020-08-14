@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
                  selectedImages:(NSArray<NSString *> *)selectedImages
              selectedTitleColor:(UIColor *)selectedColor
            unSelectedTitleColor:(UIColor *)unSelectedColor
-                    centerStyle:(WLCenterStyle)centerStyle;
+                    centerStyle:(WLTabBarItemStyle)centerStyle;
 
 @end
 
