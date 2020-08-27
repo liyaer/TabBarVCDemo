@@ -11,7 +11,7 @@
 #import "Header.h"
 
 
-static const NSInteger TagAddedValue = 10; //设置btn tag时所加的固定值
+static const NSInteger cDTagAddedValue = 10; //设置btn tag时所加的固定值
 
 
 @interface WLCustomTabBar () {
@@ -43,7 +43,7 @@ static const NSInteger TagAddedValue = 10; //设置btn tag时所加的固定值
         
         for (int i = 0; i < itemTitles.count; i++) {
             
-            WLCustomBtn *btn = [WLCustomBtn customWithTitle:itemTitles[i] titleColor:itemTitleUnselectedColor titleSelectColor:itemTitleSelectedColor image:itemUnselectedImageNames[i] selectImage:itemSelectedImageNames[i] tag:(i + TagAddedValue)];
+            WLCustomBtn *btn = [WLCustomBtn customWithTitle:itemTitles[i] titleColor:itemTitleUnselectedColor titleSelectColor:itemTitleSelectedColor image:itemUnselectedImageNames[i] selectImage:itemSelectedImageNames[i] tag:(i + cDTagAddedValue)];
             [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:btn];
             
@@ -76,7 +76,7 @@ static const NSInteger TagAddedValue = 10; //设置btn tag时所加的固定值
     CGFloat itemX = 0.0;
     for (int i = 0; i < _itemCounts; i++) {
         
-        UIButton *btn = [self viewWithTag:(i + TagAddedValue)];
+        UIButton *btn = [self viewWithTag:(i + cDTagAddedValue)];
         itemX = itemWidth * (i>(_itemCounts/2-1) ? i+1 : i);
         btn.frame = CGRectMake(itemX, 0, itemWidth, cDTabBarHeight);
     }
@@ -89,7 +89,7 @@ static const NSInteger TagAddedValue = 10; //设置btn tag时所加的固定值
     if (btn.tag == 10086) {
         
         if ([self.delegate respondsToSelector:@selector(tabBar:didSelectIndexFrom:to:)]) {
-            [self.delegate tabBar:self didSelectIndexFrom:(_lastClickBtn.tag - TagAddedValue) to:btn.tag];
+            [self.delegate tabBar:self didSelectIndexFrom:(_lastClickBtn.tag - cDTagAddedValue) to:btn.tag];
         }
     } else {
 
@@ -99,7 +99,7 @@ static const NSInteger TagAddedValue = 10; //设置btn tag时所加的固定值
         
         if ([self.delegate respondsToSelector:@selector(tabBar:didSelectIndexFrom:to:)]) {
             
-            [self.delegate tabBar:self didSelectIndexFrom:(_lastClickBtn.tag - TagAddedValue) to:(btn.tag - TagAddedValue)];
+            [self.delegate tabBar:self didSelectIndexFrom:(_lastClickBtn.tag - cDTagAddedValue) to:(btn.tag - cDTagAddedValue)];
             
             btn.selected = !btn.selected;
             _lastClickBtn.selected = !_lastClickBtn.selected;

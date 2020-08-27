@@ -13,6 +13,8 @@
     NSInteger _specialIndex;
     WLTabBarItemStyle _specialStyle;
     BOOL _show;
+    
+    NSInteger _itemCounts;
 }
 @property (nonatomic, strong) UIButton *centerBtn;
 
@@ -40,6 +42,7 @@
             _specialIndex = specialIndex;
             _specialStyle = specialStyle;
             _show = show;
+            _itemCounts = names.count;
             
             for (int i = 0; i < names.count; i++) {
                 [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:images[i] selectedImage:selectedImages[i] useNav:((!show && i==specialIndex) ? NO : YES)];
@@ -70,6 +73,9 @@
         specialItem.imageInsets = UIEdgeInsetsMake(-25, 0, 25, 0);
     }
     specialItem.titlePositionAdjustment = UIOffsetMake(0, 100);//隐藏title
+    
+//    #error 不同设备分辨率对此是否产生影响？用粪X试试
+    NSLog(@" image.size:%@ \n image.scale:%.2f", NSStringFromCGSize(specialItem.image.size), specialItem.image.scale);
 }
 
 #pragma mark - UITabBarControllerDelegate
@@ -124,7 +130,9 @@
     if (!_centerBtn) {
         _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _centerBtn.frame = CGRectMake(0, 0, cDTabBarHeight, cDTabBarHeight);
-        _centerBtn.center = CGPointMake(CGRectGetWidth(self.tabBar.frame)/2, 0);
+        CGFloat itemWidth = CGRectGetWidth(self.tabBar.frame)/_itemCounts;
+        CGFloat centerX = itemWidth*_specialIndex + itemWidth/2;
+        _centerBtn.center = CGPointMake(centerX, 0);
 /*
     现象：中间tabBarItem的点击事件会拦截btn的点击事件，因此这里设置无效。
     原因：系统添加tabBarItem的时机在添加btn之后（请看“视图层级.png”，同时也解释了方式三为什么不会影响tabBarItem的显示和交互）
@@ -134,14 +142,5 @@
     }
     return _centerBtn;
 }
-
-
-
-
-/*
-    centerBtn frame 的最优设置（根据图片大小设置）
-    可以用btn完成展示操作，这里btn只用来处理点击
-    对于凸起，有tap会影响
- */
 
 @end

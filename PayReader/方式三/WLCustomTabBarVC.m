@@ -28,12 +28,9 @@
                     centerStyle:(WLTabBarItemStyle)centerStyle {
     
     if (self = [super init]) {
-        
         BOOL countEqual = (names.count == titles.count) && (titles.count == images.count) && (images.count == selectedImages.count);
         BOOL countNoZero = names.count > 0;
-        
         if (countEqual && countNoZero) {
-                        
             for (int i = 0; i < names.count; i++) {
                 [self addChildVC:[NSClassFromString(names[i]) new] title:titles[i] image:nil selectedImage:nil useNav:YES];
             }
@@ -55,7 +52,6 @@
     
     // 移除原有的UITabBarButton(继承自UIControl)
     for (UIView *subView in self.tabBar.subviews) {
-        
         // UITabBarButton私有API, 普通开发者不能使用
         if ([subView isKindOfClass:[UIControl class]]) {
             // 判断如果子控件是UITabBarButton, 就删除

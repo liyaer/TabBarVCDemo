@@ -14,6 +14,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WLDrawTabBarView : UIView
 
+@property (nonatomic, assign) NSInteger specialIndex;
+@property (nonatomic, assign) NSInteger itemCount;
+
 @end
 
 NS_ASSUME_NONNULL_END

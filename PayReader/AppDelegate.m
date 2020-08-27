@@ -13,14 +13,14 @@
 
 #import "WLSystemNomalTabBarVC.h"
 #import "WLSystemSpecialTabBarVC.h"
-#import "WLDrawTabBarVC.h"
+#import "WLSystemDrawTabBarVC.h"
 
-#import "WLKvcTabBarVC.h"
+#import "WLCustomKvcTabBarVC.h"
 
 #import "WLCustomTabBarVC.h"
 
 
-#define TabBarType 21
+#define TabBarType 4
 
 
 @interface AppDelegate ()
@@ -76,16 +76,16 @@
 
 - (void)setRootVC {
 
-#if (TabBarType == 2)
+#if (TabBarType == 2 || TabBarType == 3 || TabBarType == 4)
     NSArray *vcNames = @[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"PersonalVC"];
     NSArray *titles = @[@"书架",@"精选",@"分类",@"我的"];
     NSArray *images = @[@"1",@"2",@"3",@"4"];
     NSArray *selectImages = @[@"11",@"22",@"33",@"44"];
-#elif (TabBarType == 21)
-    NSArray *vcNames = @[@"BookShelfVC",@"RecommendVC",@"SpecialVC",@"ClassifyVC",@"PersonalVC"];
-    NSArray *titles = @[@"书架",@"精选",@"Special",@"分类",@"我的"];
-    NSArray *images = @[@"1",@"2",@"special_hump",@"3",@"4"];
-    NSArray *selectImages = @[@"11",@"22",@"special_s",@"33",@"44"];
+#elif (TabBarType == 21 || TabBarType == 22)
+    NSArray *vcNames = @[@"BookShelfVC",@"RecommendVC",@"ClassifyVC",@"SpecialVC",@"PersonalVC"];
+    NSArray *titles = @[@"书架",@"精选",@"分类",@"Special",@"我的"];
+    NSArray *images = @[@"1",@"2",@"3",@"special_hump",@"4"];
+    NSArray *selectImages = @[@"11",@"22",@"33",@"special_s",@"44"];
 #endif
     UIColor *titleColor = [UIColor blackColor];
     UIColor *selectTitleColor = [UIColor purpleColor];
@@ -102,13 +102,13 @@
 #elif (TabBarType == 2)
     WLSystemNomalTabBarVC *tabBar = [[WLSystemNomalTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor];
 #elif (TabBarType == 21)
-    WLSystemSpecialTabBarVC *tabBar = [[WLSystemSpecialTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor specialItemIndex:2 specialItemStyle:WLTabBarItemHump showVCWhenSpecialItemCliked:YES];
+    WLSystemSpecialTabBarVC *tabBar = [[WLSystemSpecialTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor specialItemIndex:3 specialItemStyle:WLTabBarItemHump showVCWhenSpecialItemCliked:NO];
+#elif (TabBarType == 22)
+    WLSystemDrawTabBarVC *tabBar = [[WLSystemDrawTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor specialItemIndex:3 showVCWhenSpecialItemCliked:NO];
 #elif (TabBarType == 3)
-    WLKvcTabBarVC *tabBar = [[WLKvcTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC"] titles:@[@"书架",@"精选"] images:@[@"1",@"2"] selectedImages:@[@"11",@"22"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleHump];
+    WLCustomKvcTabBarVC *tabBar = [[WLCustomKvcTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor specialItemIndex:1 centerStyle:WLTabBarItemNormal];
 #elif (TabBarType == 4)
-       WLCustomTabBarVC *tabBar = [[WLCustomTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC"] titles:@[@"书架",@"精选"] images:@[@"1",@"2"] selectedImages:@[@"11",@"22"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor] centerStyle:WLCenterStyleNormal];
-#else
-    WLDrawTabBarVC *tabBar = [[WLDrawTabBarVC alloc] initWithVCNames:@[@"BookShelfVC",@"RecommendVC",@"ClassifyVC"] titles:@[@"书架",@"精选",@"分类"] images:@[@"1",@"2",@"3"] selectedImages:@[@"11",@"22",@"33"] selectedTitleColor:[UIColor orangeColor] unSelectedTitleColor:[UIColor blackColor]];
+       WLCustomTabBarVC *tabBar = [[WLCustomTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor centerStyle:WLTabBarItemNormal];
 #endif
     self.window.rootViewController = tabBar;
 }

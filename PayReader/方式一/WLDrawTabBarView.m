@@ -16,19 +16,23 @@ static const CGFloat lineWidth = 1;
 
 - (void)drawRect:(CGRect)rect {
     
+    if (_itemCount <= 0 || _specialIndex >= _itemCount) {
+        return;
+    }
+    
+    
     CGFloat width = CGRectGetWidth(rect);
     CGFloat height = CGRectGetHeight(rect);
     
-    
-    CGPoint circleCenter = CGPointMake(width/2, height/2); //圆心
+    CGFloat itemWidth = width/_itemCount;
+    CGFloat circleCenterX = itemWidth * _specialIndex + itemWidth/2;
+    CGPoint circleCenter = CGPointMake(circleCenterX, height/2); //圆心
     CGFloat radiu = (height - lineWidth)/2; //半径
     CGFloat lineY = height - kDTabBarHeightAll; //横线（绘制点）的Y值
     CGFloat toLine = circleCenter.y - lineY; //圆心到横线（绘制点）的垂直距离
-    CGFloat missingLineWidth = sqrt(pow(radiu, 2) - pow(toLine, 2));
-    missingLineWidth = missingLineWidth * 2; //利用勾股定理，计算圆弧对应的弦长（ = 横线缺失部分长度）
-    CGFloat lineW = (width - missingLineWidth)/2.0; //横线（需要绘制的）长度
-    CGPoint roundLeftPoint = CGPointMake(lineW, lineY); //圆弧左节点
-    CGPoint roundRightPoint = CGPointMake(width - lineW, lineY); //圆弧右节点
+    CGFloat missingLineWidth = sqrt(pow(radiu, 2) - pow(toLine, 2));//利用勾股定理，计算圆弧对应的弦长（ = 横线缺失部分长度的一半）
+    CGPoint roundLeftPoint = CGPointMake(circleCenterX - missingLineWidth, lineY); //圆弧左节点
+    CGPoint roundRightPoint = CGPointMake(circleCenterX + missingLineWidth, lineY); //圆弧右节点
     
     
     //左边横线

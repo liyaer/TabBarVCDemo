@@ -12,7 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WLKvcTabBar : WLBaseTabBar
 
-+ (instancetype)tabBarWithCenterStyle:(WLTabBarItemStyle)centerStyle barItemCounts:(NSInteger)itemCounts;
++ (instancetype)tabBarWithCenterStyle:(WLTabBarItemStyle)centerStyle
+                        barItemCounts:(NSInteger)itemCounts
+                     specialItemIndex:(NSInteger)specialIndex;
 
 @end
 
