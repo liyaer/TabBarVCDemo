@@ -26,7 +26,8 @@ NS_ASSUME_NONNULL_BEGIN
     barItemTitleSelectedColor:(UIColor *)itemTitleSelectedColor
   barItemTitleUnselectedColor:(UIColor *)itemTitleUnselectedColor
     barItemSelectedImageNames:(NSArray<NSString *> *)itemSelectedImageNames
-  barItemUnselectedImageNames:(NSArray<NSString *> *)itemUnselectedImageNames;
+  barItemUnselectedImageNames:(NSArray<NSString *> *)itemUnselectedImageNames
+             specialItemIndex:(NSInteger)specialIndex;
 
 @property (nonatomic, weak) id<WLCustomTabBarDelegate> delegate;
 

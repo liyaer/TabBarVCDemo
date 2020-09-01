@@ -16,6 +16,7 @@ static const NSInteger cDTagAddedValue = 10; //设置btn tag时所加的固定�
 
 @interface WLCustomTabBar () {
     NSInteger _itemCounts;
+    NSInteger _specialIndex;
     UIButton *_lastClickBtn;
 }
 
@@ -33,16 +34,16 @@ static const NSInteger cDTagAddedValue = 10; //设置btn tag时所加的固定�
     barItemTitleSelectedColor:(UIColor *)itemTitleSelectedColor
   barItemTitleUnselectedColor:(UIColor *)itemTitleUnselectedColor
     barItemSelectedImageNames:(NSArray<NSString *> *)itemSelectedImageNames
-  barItemUnselectedImageNames:(NSArray<NSString *> *)itemUnselectedImageNames {
+  barItemUnselectedImageNames:(NSArray<NSString *> *)itemUnselectedImageNames
+             specialItemIndex:(NSInteger)specialIndex {
     
     if (self = [super initWithFrame:frame]) {
-                
         _itemCounts = itemTitles.count;
+        _specialIndex = specialIndex;
         
         [self addSubview:self.centerBtn];
         
         for (int i = 0; i < itemTitles.count; i++) {
-            
             WLCustomBtn *btn = [WLCustomBtn customWithTitle:itemTitles[i] titleColor:itemTitleUnselectedColor titleSelectColor:itemTitleSelectedColor image:itemUnselectedImageNames[i] selectImage:itemSelectedImageNames[i] tag:(i + cDTagAddedValue)];
             [btn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:btn];
@@ -54,7 +55,6 @@ static const NSInteger cDTagAddedValue = 10; //设置btn tag时所加的固定�
             }
         }
     }
-    
     return self;
 }
 
@@ -63,21 +63,21 @@ static const NSInteger cDTagAddedValue = 10; //设置btn tag时所加的固定�
     [super layoutSubviews];
     
     CGFloat tabBarWidth = CGRectGetWidth(self.frame);
-    
+    CGFloat itemWidth = tabBarWidth/(_itemCounts + 1);
+
     //设置中间特殊按钮的位置
+    CGFloat centerX = itemWidth*_specialIndex + itemWidth/2;
 //    if (_centerStyle == WLCenterStyleHump) {
-//        _centerBtn.center = CGPointMake(tabBarWidth/2, 0);
+//        _centerBtn.center = CGPointMake(centerX, 0);
 //    } else {
-        _centerBtn.center = CGPointMake(tabBarWidth/2, cDTabBarHeight/2);
+        _centerBtn.center = CGPointMake(centerX, cDTabBarHeight/2);
 //    }
     
     //设置其他tabBarItem的位置
-    CGFloat itemWidth = tabBarWidth/(_itemCounts + 1);
     CGFloat itemX = 0.0;
     for (int i = 0; i < _itemCounts; i++) {
-        
         UIButton *btn = [self viewWithTag:(i + cDTagAddedValue)];
-        itemX = itemWidth * (i>(_itemCounts/2-1) ? i+1 : i);
+        itemX = itemWidth * (i>=_specialIndex ? i+1 : i);
         btn.frame = CGRectMake(itemX, 0, itemWidth, cDTabBarHeight);
     }
 }
@@ -87,18 +87,15 @@ static const NSInteger cDTagAddedValue = 10; //设置btn tag时所加的固定�
 - (void)btnClicked:(UIButton *)btn {
     
     if (btn.tag == 10086) {
-        
         if ([self.delegate respondsToSelector:@selector(tabBar:didSelectIndexFrom:to:)]) {
             [self.delegate tabBar:self didSelectIndexFrom:(_lastClickBtn.tag - cDTagAddedValue) to:btn.tag];
         }
     } else {
-
         if (btn == _lastClickBtn) {
             return;
         }
         
         if ([self.delegate respondsToSelector:@selector(tabBar:didSelectIndexFrom:to:)]) {
-            
             [self.delegate tabBar:self didSelectIndexFrom:(_lastClickBtn.tag - cDTagAddedValue) to:(btn.tag - cDTagAddedValue)];
             
             btn.selected = !btn.selected;
@@ -125,7 +122,6 @@ static const NSInteger cDTagAddedValue = 10; //设置btn tag时所加的固定�
 //}
 //
 ////解决中间特殊按钮凸起部分不能响应点击事件
-////该次点击没有其他事件响应时，才会调用下面的方法（比如点击tabBarItem，会拦截响应该方法）
 //- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 //
 //    [super touchesBegan:touches withEvent:event];
@@ -134,17 +130,14 @@ static const NSInteger cDTagAddedValue = 10; //设置btn tag时所加的固定�
 #pragma mark - 懒加载
 
 - (UIButton *)centerBtn {
-    
     if (!_centerBtn) {
-        
         _centerBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _centerBtn.frame = CGRectMake(0, 0, cDTabBarHeight, cDTabBarHeight);
-        [_centerBtn setImage:[UIImage imageNamed:@"5"] forState:UIControlStateNormal];
+        [_centerBtn setImage:[UIImage imageNamed:@"special_hump"] forState:UIControlStateNormal];
         _centerBtn.adjustsImageWhenHighlighted = NO;
         _centerBtn.tag = 10086;
         [_centerBtn addTarget:self action:@selector(btnClicked:) forControlEvents:UIControlEventTouchUpInside];
     }
-    
     return _centerBtn;
 }
 

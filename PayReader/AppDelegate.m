@@ -20,7 +20,7 @@
 #import "WLCustomTabBarVC.h"
 
 
-#define TabBarType 4
+#define TabBarType 2
 
 
 @interface AppDelegate ()
@@ -108,7 +108,7 @@
 #elif (TabBarType == 3)
     WLCustomKvcTabBarVC *tabBar = [[WLCustomKvcTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor specialItemIndex:1 centerStyle:WLTabBarItemNormal];
 #elif (TabBarType == 4)
-       WLCustomTabBarVC *tabBar = [[WLCustomTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor centerStyle:WLTabBarItemNormal];
+       WLCustomTabBarVC *tabBar = [[WLCustomTabBarVC alloc] initWithVCNames:vcNames titles:titles images:images selectedImages:selectImages selectedTitleColor:selectTitleColor unSelectedTitleColor:titleColor specialItemIndex:3];
 #endif
     self.window.rootViewController = tabBar;
 }
