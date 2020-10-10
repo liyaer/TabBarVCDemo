@@ -37,6 +37,23 @@
     NSLog(@"111111 %@ viewDidLoad", [self class]);
 }
 
+#pragma mark - Test BadgeValue
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.tabBarItem.badgeValue = nil;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+//    self.tabBarItem.badgeValue = @"好的👌";
+    self.tabBarItem.badgeValue = @"";
+}
+
+#pragma mark - Click Action
+
 - (void)pushVC {
     
     UIViewController *vc = [UIViewController new];

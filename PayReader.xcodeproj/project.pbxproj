@@ -17,6 +17,7 @@
 		048D2BD224E3978D004E5179 /* special_hump@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 048D2BD124E3978D004E5179 /* special_hump@2x.png */; };
 		048D614424A98CC60034D4F0 /* WLCustomTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 048D614324A98CC60034D4F0 /* WLCustomTabBar.m */; };
 		0490E97224DC038C00EB221B /* 视图层级.png in Resources */ = {isa = PBXBuildFile; fileRef = 0490E97124DC038C00EB221B /* 视图层级.png */; };
+		0491ACF1251C3579003D1C24 /* UITabBar+WLBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = 0491ACF0251C3579003D1C24 /* UITabBar+WLBadge.m */; };
 		3C18AA9B24B02420005F86AA /* WLBaseTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AA9A24B02420005F86AA /* WLBaseTabBarController.m */; };
 		3C18AA9E24B02554005F86AA /* WLSystemSpecialTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AA9D24B02554005F86AA /* WLSystemSpecialTabBarVC.m */; };
 		3C18AAA124B026F8005F86AA /* WLCustomKvcTabBarVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C18AAA024B026F8005F86AA /* WLCustomKvcTabBarVC.m */; };
@@ -83,6 +84,8 @@
 		048D614824A999980034D4F0 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		048D614924A99B150034D4F0 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		0490E97124DC038C00EB221B /* 视图层级.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "视图层级.png"; sourceTree = "<group>"; };
+		0491ACEF251C3579003D1C24 /* UITabBar+WLBadge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITabBar+WLBadge.h"; sourceTree = "<group>"; };
+		0491ACF0251C3579003D1C24 /* UITabBar+WLBadge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITabBar+WLBadge.m"; sourceTree = "<group>"; };
 		3C18AA9924B02420005F86AA /* WLBaseTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLBaseTabBarController.h; sourceTree = "<group>"; };
 		3C18AA9A24B02420005F86AA /* WLBaseTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WLBaseTabBarController.m; sourceTree = "<group>"; };
 		3C18AA9C24B02554005F86AA /* WLSystemSpecialTabBarVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WLSystemSpecialTabBarVC.h; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 				3C18AA9A24B02420005F86AA /* WLBaseTabBarController.m */,
 				3C18AAA224B0285B005F86AA /* WLBaseTabBar.h */,
 				3C18AAA324B0285B005F86AA /* WLBaseTabBar.m */,
+				0491ACEF251C3579003D1C24 /* UITabBar+WLBadge.h */,
+				0491ACF0251C3579003D1C24 /* UITabBar+WLBadge.m */,
 				3C18AA9024B0124D005F86AA /* 方式一 */,
 				3C18AA9124B012B6005F86AA /* 方式二 */,
 				3C18AA9224B012BF005F86AA /* 方式三 */,
@@ -526,6 +531,7 @@
 				D2DE97331F908A5200E0E050 /* BookShelfVC.m in Sources */,
 				3C18AAA424B0285B005F86AA /* WLBaseTabBar.m in Sources */,
 				D2DE97341F908A5200E0E050 /* ClassifyVC.m in Sources */,
+				0491ACF1251C3579003D1C24 /* UITabBar+WLBadge.m in Sources */,
 				D2755BAF204E922300F8DD71 /* SubmitTabBarVC.m in Sources */,
 				3C1BF72D24B742BB000CEF7A /* WLCustomBtn.m in Sources */,
 				0489DE2324DD457E00CF8F53 /* WLSystemNomalTabBarVC.m in Sources */,

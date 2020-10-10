@@ -50,6 +50,9 @@
     
     [super viewWillLayoutSubviews];
     
+    //打印视图层次
+//    NSLog(@"recursive description:\n\n%@\n\n",[self.tabBar performSelector:@selector(recursiveDescription)]);
+    
     // 移除原有的UITabBarButton(继承自UIControl)
     for (UIView *subView in self.tabBar.subviews) {
         // UITabBarButton私有API, 普通开发者不能使用
